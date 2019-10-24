@@ -133,3 +133,7 @@ TARGET_HEALTH_CHARGING_CONTROL_CHARGING_DISABLED ?= 0
 TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS ?= true
 TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_DEADLINE ?= false
 TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_TOGGLE ?= true
+
+# Enable Android Beam on all targets
+PRODUCT_COPY_FILES += \
+    vendor/neoteric/target/config/permissions/android.software.nfc.beam.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.software.nfc.beam.xml
