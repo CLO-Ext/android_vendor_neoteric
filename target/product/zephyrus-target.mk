@@ -110,3 +110,10 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/zephyrus/init/zeph-updates.rc::$(TARGET_COPY_OUT_SYSTEM)/etc/init/zeph-updates.rc \
     vendor/zephyrus/init/clean_cache.sh::$(TARGET_COPY_OUT_SYSTEM)/bin/clean_cache.sh
+
+# Pixel charger images
+USE_PIXEL_CHARGER_IMAGES ?= true
+ifeq ($(USE_PIXEL_CHARGER_IMAGES),true)
+PRODUCT_PACKAGES += \
+    product_charger_res_images
+endif
