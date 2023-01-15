@@ -2,7 +2,7 @@
 # Documentation here:
 # https://github.com/LineageOS/android_build_soong/commit/8328367c44085b948c003116c0ed74a047237a69
 
-# PA Variables
+# Zephyrus Variables
 
 SOONG_CONFIG_NAMESPACES += zephyrusVarsPlugin
 
@@ -20,6 +20,7 @@ SOONG_CONFIG_zephyrusGlobalVars += \
     needs_camera_boottime \
     target_init_vendor_lib \
     target_ld_shim_libs \
+    uses_oplus_camera \
     target_process_sdk_version_override \
     target_surfaceflinger_udfps_lib
 
@@ -31,6 +32,7 @@ TARGET_SURFACEFLINGER_UDFPS_LIB ?= surfaceflinger_udfps_lib
 SOONG_CONFIG_zephyrusGlobalVars_needs_camera_boottime := $(TARGET_CAMERA_BOOTTIME_TIMESTAMP)
 SOONG_CONFIG_zephyrusGlobalVars_target_init_vendor_lib := $(TARGET_INIT_VENDOR_LIB)
 SOONG_CONFIG_zephyrusGlobalVars_target_ld_shim_libs := $(subst $(space),:,$(TARGET_LD_SHIM_LIBS))
+SOONG_CONFIG_zephyrusGlobalVars_uses_oplus_camera := $(TARGET_USES_OPLUS_CAMERA)
 SOONG_CONFIG_zephyrusGlobalVars_target_process_sdk_version_override := $(TARGET_PROCESS_SDK_VERSION_OVERRIDE)
 SOONG_CONFIG_zephyrusGlobalVars_target_surfaceflinger_udfps_lib := $(TARGET_SURFACEFLINGER_UDFPS_LIB)
 
