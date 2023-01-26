@@ -12,8 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# ZEPHYRUS Versioning.
-$(call inherit-product, vendor/zephyrus/target/product/version.mk)
+# Overlays
+$(call inherit-product, vendor/zephyrus/overlay/overlay.mk)
+$(call inherit-product, vendor/zephyrus/rro_overlays/rro_overlays.mk)
 
 # Bootanimation
 $(call inherit-product, vendor/zephyrus/bootanimation/bootanimation.mk)
@@ -22,15 +23,9 @@ $(call inherit-product, vendor/zephyrus/bootanimation/bootanimation.mk)
 DONT_DEXPREOPT_PREBUILTS := true
 
 # Fonts
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,vendor/zephyrus/prebuilts/fonts/,$(TARGET_COPY_OUT_PRODUCT)/fonts) \
-    vendor/zephyrus/target/config/fonts_customization.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/fonts_customization.xml
+include vendor/zephyrus/prebuilts/fonts/fonts.mk
 
 $(call inherit-product, external/google-fonts/lato/fonts.mk)
-
-# HIDL
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
-     vendor/zephyrus/target/config/zephyrus_vendor_framework_compatibility_matrix.xml
 
 # Include Common Qualcomm Device Tree.
 $(call inherit-product, device/qcom/common/common.mk)
@@ -38,21 +33,17 @@ $(call inherit-product, device/qcom/common/common.mk)
 # Include definitions for Snapdragon Clang
 $(call inherit-product, vendor/qcom/sdclang/config/SnapdragonClang.mk)
 
-# Include Overlay makefile.
-$(call inherit-product, vendor/zephyrus/overlay/overlays.mk)
-
 # Include Packages makefile.
 $(call inherit-product, vendor/zephyrus/target/product/packages.mk)
 
 # Include Properties makefile.
 $(call inherit-product, vendor/zephyrus/target/product/properties.mk)
 
-# Include SEPolicy makefile.
-$(call inherit-product, vendor/zephyrus/sepolicy/sepolicy.mk)
+# Include APNs
+$(call inherit-product, vendor/zephyrus/telephony/telephony.mk)
 
 # Include GMS, Modules, and Pixel features.
 $(call inherit-product, vendor/google/gms/config.mk)
-$(call inherit-product, vendor/google/pixel/config.mk)
 
 ifneq ($(TARGET_FLATTEN_APEX), true)
 $(call inherit-product-if-exists, vendor/google/modules/build/mainline_modules.mk)
@@ -69,10 +60,6 @@ PRODUCT_COPY_FILES += \
     vendor/zephyrus/target/config/permissions/default_permissions_com.google.android.deskclock.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/default-permissions/default_permissions_com.google.android.deskclock.xml \
     vendor/zephyrus/target/config/permissions/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml \
     vendor/zephyrus/target/config/permissions/lily_experience.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/lily_experience.xml
-
-# Pre-optimization
-PRODUCT_DEXPREOPT_SPEED_APPS += \
-    ParanoidSystemUI
 
 # Compile SystemUI on device with `speed`.
 PRODUCT_PROPERTY_OVERRIDES += \

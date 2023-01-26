@@ -1,0 +1,5 @@
+runtime_resource_overlay {
+    name: "FontHKGroteskOverlay",
+    theme: "FontHKGrotesk",
+    product_specific: true,
+}

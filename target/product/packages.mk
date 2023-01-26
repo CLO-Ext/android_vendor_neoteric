@@ -12,10 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Abstruct
-PRODUCT_PACKAGES += \
-    Abstruct
-
 # Camera
 PRODUCT_PACKAGES += \
     GoogleCameraGo
@@ -40,30 +36,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full-rtti
 
-# Paranoid Packages
-PRODUCT_PACKAGES += \
-    ParanoidPapers \
-    ParanoidSense
+# Common Overlay
+DEVICE_PACKAGE_OVERLAYS += \
+    vendor/zephyrus/overlay-gapps/common
 
-# Paranoid Packages (OTA)
-ifneq ($(filter RELEASE BETA,$(ZEPHYRUS_BUILDTYPE)),)
-PRODUCT_PACKAGES += ParanoidHub
-endif
-
-PRODUCT_PACKAGES += \
-    init.zephyrus-hub.rc
-
-# Paranoid ThemePicker
-PRODUCT_PACKAGES += \
-    ParanoidThemePicker
-
-# Paranoid SystemUI
-PRODUCT_PACKAGES += \
-    ParanoidSystemUI
-
-# Gestures
-PRODUCT_PACKAGES += \
-    vendor.zephyrus.power-service
+# Exclude RRO Enforcement
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS +=  \
+    vendor/zephyrus/overlay-gapps/common   
 
 # Repainter (kdrag0n)
 PRODUCT_PACKAGES += \

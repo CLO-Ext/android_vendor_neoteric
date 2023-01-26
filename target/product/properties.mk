@@ -43,7 +43,3 @@ PRODUCT_PRODUCT_PROPERTIES += \
 # Increase volume level steps
 PRODUCT_SYSTEM_PROPERTIES += \
     ro.config.media_vol_steps=30
-
-# Enable Sense service for 64-bit only
-PRODUCT_SYSTEM_EXT_PROPERTIES += \
-    ro.face.sense_service=$(TARGET_SUPPORTS_64_BIT_APPS)

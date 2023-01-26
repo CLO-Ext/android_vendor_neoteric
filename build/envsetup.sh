@@ -15,15 +15,4 @@ function clomerge()
     python3 $T/vendor/zephyrus/build/tools/merge-clo.py $target_branch
 }
 
-function repopick()
-{
-    T=$(gettop)
-    $T/vendor/zephyrus/build/tools/repopick.py $@
-}
-
-function sort-blobs-list() {
-    T=$(gettop)
-    $T/tools/extract-utils/sort-blobs-list.py $@
-}
-
 export SKIP_ABI_CHECKS="true"

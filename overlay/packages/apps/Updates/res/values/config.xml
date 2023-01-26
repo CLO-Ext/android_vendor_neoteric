@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <string-array name="config_device_list" translatable="false">
+      <item>alioth</item>
+      <item>avicii</item>
+      <item>cheeseburger</item>
+      <item>dumpling</item>
+      <item>instantnoodle</item>
+      <item>instantnoodlep</item>
+      <item>lemonadep</item>
+      <item>lemonades</item>
+      <item>surya</item>
+      <item>veux</item>
+      <item>violet</item>
+   </string-array>
+
+   <string-array name="config_maintainer_name_list" translatable="false">
+      <item>VEN0M98</item>
+      <item>Manikantaraavi</item>
+      <item>Mudabbirul Saad</item>
+      <item>Mudabirrul Saad</item>
+      <item>Twinchin12</item>
+      <item>Twinchin12 </item>
+      <item>Sherif Rahim</item>
+      <item>HELLBOY017</item>
+      <item>Hazama25</item>
+      <item>SharmagRit</item>
+      <item>kibria5</item>
+   </string-array>
+
+   <string-array name="config_maintainer_link_list" translatable="false">
+      <item>https://t.me/VEN0M98</item>
+      <item>https://t.me/AlwaysAngry</item>
+      <item>https://t.me/MudabbirulSaad</item>
+      <item>https://t.me/MudabbirulSaad</item>
+      <item>https://t.me/twinchin96</item>
+      <item>https://t.me/twinchin96</item>
+      <item>https://t.me/sherifrahim</item>
+      <item>https://t.me/HELLBOY017</item>
+      <item>https://t.me/Hazama25</item>
+      <item>https://t.me/SharmagRit</item>
+      <item>https://t.me/kibria5</item>
+   </string-array>
+
+   <string-array name="config_donate_list" translatable="false">
+      <item>https://www.paypal.com/paypalme/Manikantaraavi</item>
+      <item>https://www.paypal.com/paypalme/Manikantaraavi</item>
+      <item>https://www.paypal.com/paypalme/Manikantaraavi</item>
+      <item>https://www.paypal.com/paypalme/Manikantaraavi</item>
+      <item>https://www.paypal.com/paypalme/Manikantaraavi</item>
+      <item>https://www.paypal.com/paypalme/Manikantaraavi</item>
+      <item>https://www.paypal.com/paypalme/Manikantaraavi</item>
+      <item>https://www.paypal.com/paypalme/Manikantaraavi</item>
+      <item>https://www.paypal.com/paypalme/Manikantaraavi</item>
+      <item>https://www.paypal.com/paypalme/Manikantaraavi</item>
+      <item>https://www.paypal.com/paypalme/Manikantaraavi</item>
+   </string-array>
+
+   <string-array name="config_group_list" translatable="false">
+      <item>https://t.me/ProjectZephyrusCommunity</item>
+      <item>https://t.me/pexnord</item>
+      <item>https://t.me/ProjectZephyrusCommunity</item>
+      <item>https://t.me/ProjectZephyrusCommunity</item>
+      <item>https://t.me/ZephyrusOP8</item>
+      <item>https://t.me/ZephyrusOP8</item>
+      <item>https://t.me/area51lemonade</item>
+      <item>https://t.me/ZephyrusOP8</item>
+      <item>https://t.me/ProjectZephyrusCommunity</item>
+      <item>https://t.me/ProjectZephyrusCommunity</item>
+      <item>https://t.me/ProjectZephyrusCommunity</item>
+   </string-array>
+   
+</resources>
