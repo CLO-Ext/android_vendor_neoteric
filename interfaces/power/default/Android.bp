@@ -1,7 +1,7 @@
 soong_config_module_type {
     name: "powerfeature_cc_defaults",
     module_type: "cc_defaults",
-    config_namespace: "aospaGestureVars",
+    config_namespace: "zephyrusGestureVars",
     value_variables: [
         "target_gestures_node",
         "target_tap_to_wake_node",
@@ -87,17 +87,17 @@ powerfeature_cc_defaults {
 }
 
 cc_binary {
-    name: "vendor.aospa.power-service",
+    name: "vendor.zephyrus.power-service",
     defaults: ["powerfeature_defaults"],
     relative_install_path: "hw",
-    init_rc: ["vendor.aospa.power-service.rc"],
-    vintf_fragments: ["vendor.aospa.power.xml"],
+    init_rc: ["vendor.zephyrus.power-service.rc"],
+    vintf_fragments: ["vendor.zephyrus.power.xml"],
     vendor: true,
     shared_libs: [
         "libbase",
         "libbinder_ndk",
         "liblog",
-        "vendor.aospa.power-V1-ndk",
+        "vendor.zephyrus.power-V1-ndk",
     ],
     srcs: [
         "PowerFeature.cpp",

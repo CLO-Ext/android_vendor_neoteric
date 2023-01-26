@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2021 Paranoid Android
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources>
+
+    <!-- Default list of files pinned by the Pinner Service -->
+    <string-array translatable="false" name="config_defaultPinnerServiceFiles">
+        <item>"/system/bin/surfaceflinger"</item>
+        <item>"/system/framework/framework.jar"</item>
+        <item>"/system/framework/services.jar"</item>
+        <item>"/system/framework/ext.jar"</item>
+        <item>"/system/framework/QPerformance.jar"</item>
+        <item>"/system/framework/QXPerformance.jar"</item>
+        <item>"/system/framework/UxPerformance.jar"</item>
+        <item>"/system/lib/libEGL.so"</item>
+        <item>"/system/lib/libGLESv1_CM.so"</item>
+        <item>"/system/lib/libGLESv2.so"</item>
+        <item>"/system/lib/libGLESv3.so"</item>
+        <item>"/system/lib/libgui.so"</item>
+        <item>"/system/lib/libhwui.so"</item>
+        <item>"/system/lib/libui.so"</item>
+        <item>"/system/lib/libvulkan.so"</item>
+        <item>"/system/lib64/libEGL.so"</item>
+        <item>"/system/lib64/libGLESv1_CM.so"</item>
+        <item>"/system/lib64/libGLESv2.so"</item>
+        <item>"/system/lib64/libGLESv3.so"</item>
+        <item>"/system/lib64/libgui.so"</item>
+        <item>"/system/lib64/libhwui.so"</item>
+        <item>"/system/lib64/libui.so"</item>
+        <item>"/system/lib64/libvulkan.so"</item>
+        <item>"/system/system_ext/lib/libcomposerextn.qti.so"</item>
+        <item>"/system/system_ext/lib/libdolphin.so"</item>
+        <item>"/system/system_ext/lib/liblayerext.qti.so"</item>
+        <item>"/system/system_ext/lib/libpenguin.so"</item>
+        <item>"/system/system_ext/lib/libpenguin_impl.so"</item>
+        <item>"/system/system_ext/lib64/libcomposerextn.qti.so"</item>
+        <item>"/system/system_ext/lib64/libdolphin.so"</item>
+        <item>"/system/system_ext/lib64/liblayerext.qti.so"</item>
+        <item>"/system/system_ext/lib64/libpenguin.so"</item>
+        <item>"/system/system_ext/lib64/libpenguin_impl.so"</item>
+        <item>"/system/system_ext/priv-app/ParanoidSystemUI/ParanoidSystemUI.apk"</item>
+        <item>"/vendor/lib/libcamxexternalformatutils.so"</item>
+        <item>"/vendor/lib/libipebpsstriping170.so"</item>
+        <item>"/vendor/lib/libipebpsstriping.so"</item>
+        <item>"/vendor/lib/egl/eglSubDriverAndroid.so"</item>
+        <item>"/vendor/lib/egl/libEGL_adreno.so"</item>
+        <item>"/vendor/lib/egl/libGLESv1_CM_adreno.so"</item>
+        <item>"/vendor/lib/egl/libGLESv2_adreno.so"</item>
+        <item>"/vendor/lib/hw/vulkan.adreno.so"</item>
+        <item>"/vendor/lib/libCB.so"</item>
+        <item>"/vendor/lib/libOpenCL.so"</item>
+        <item>"/vendor/lib/libadreno_app_profiles.so"</item>
+        <item>"/vendor/lib/libadreno_utils.so"</item>
+        <item>"/vendor/lib/libgpudataproducer.so"</item>
+        <item>"/vendor/lib/libgsl.so"</item>
+        <item>"/vendor/lib/libkcl.so"</item>
+        <item>"/vendor/lib/libkernelmanager.so"</item>
+        <item>"/vendor/lib/libllvm-glnext.so"</item>
+        <item>"/vendor/lib/libllvm-qcom.so"</item>
+        <item>"/vendor/lib/libllvm-qgl.so"</item>
+        <item>"/vendor/lib64/libcamxexternalformatutils.so"</item>
+        <item>"/vendor/lib64/libipebpsstriping170.so"</item>
+        <item>"/vendor/lib64/libipebpsstriping.so"</item>
+        <item>"/vendor/lib64/egl/eglSubDriverAndroid.so"</item>
+        <item>"/vendor/lib64/egl/libEGL_adreno.so"</item>
+        <item>"/vendor/lib64/egl/libGLESv1_CM_adreno.so"</item>
+        <item>"/vendor/lib64/egl/libGLESv2_adreno.so"</item>
+        <item>"/vendor/lib64/hw/vulkan.adreno.so"</item>
+        <item>"/vendor/lib64/libCB.so"</item>
+        <item>"/vendor/lib64/libOpenCL.so"</item>
+        <item>"/vendor/lib64/libadreno_app_profiles.so"</item>
+        <item>"/vendor/lib64/libadreno_utils.so"</item>
+        <item>"/vendor/lib64/libgpudataproducer.so"</item>
+        <item>"/vendor/lib64/libgsl.so"</item>
+        <item>"/vendor/lib64/libkcl.so"</item>
+        <item>"/vendor/lib64/libkernelmanager.so"</item>
+        <item>"/vendor/lib64/libllvm-glnext.so"</item>
+        <item>"/vendor/lib64/libllvm-qcom.so"</item>
+        <item>"/vendor/lib64/libllvm-qgl.so"</item>
+        <item>"/apex/com.android.art/javalib/core-oj.jar"</item>
+        <item>"/apex/com.android.art/javalib/core-libart.jar"</item>
+    </string-array>
+
+    <!-- True if home app should be pinned via Pinner Service -->
+    <bool name="config_pinnerHomeApp">true</bool>
+
+    <!-- Should the pinner service pin the Camera application? -->
+    <bool name="config_pinnerCameraApp">true</bool>
+
+    <!-- Disable stock OTA components if installed -->
+    <string-array name="config_globallyDisabledComponents" translatable="false">
+        <item>com.android.vending/com.google.android.finsky.systemupdate.SystemUpdateSettingsContentProvider</item>
+        <item>com.android.vending/com.google.android.finsky.systemupdateactivity.SettingsSecurityEntryPoint</item>
+        <item>com.android.vending/com.google.android.finsky.systemupdateactivity.SystemUpdateActivity</item>
+        <item>com.google.android.as/com.google.intelligence.sense.ambientmusic.history.HistoryContentProvider</item>
+        <item>com.google.android.as/com.google.intelligence.sense.ambientmusic.history.HistoryActivity</item>
+        <item>com.google.android.as/com.google.intelligence.sense.ambientmusic.AmbientMusicSettingsActivity</item>
+        <item>com.google.android.as/com.google.intelligence.sense.ambientmusic.AmbientMusicNotificationsSettingsActivity</item>
+        <item>com.google.android.as/com.google.intelligence.sense.ambientmusic.AmbientMusicSetupWizardActivity</item>
+        <item>com.google.android.gms/com.google.android.gms.update.phone.PopupDialog</item>
+        <item>com.google.android.gms/com.google.android.gms.update.OtaSuggestionSummaryProvider</item>
+        <item>com.google.android.gms/com.google.android.gms.update.SystemUpdateActivity</item>
+        <item>com.google.android.gms/com.google.android.gms.update.SystemUpdateGcmTaskService</item>
+        <item>com.google.android.gms/com.google.android.gms.update.SystemUpdateService</item>
+    </string-array>
+
+    <!-- Set this to true to enable the platform's auto-power-save modes like doze and
+         app standby.  These are not enabled by default because they require a standard
+         cloud-to-device messaging service for apps to interact correctly with the modes
+         (such as to be able to deliver an instant message to the device even when it is
+         dozing).  This should be enabled if you have such services and expect apps to
+         correctly use them when installed on your device.  Otherwise, keep this disabled
+         so that applications can still use their own mechanisms. -->
+    <bool name="config_enableAutoPowerModes">true</bool>
+
+    <!-- Whether safe headphone volume is enabled or not (country specific). -->
+    <bool name="config_safe_media_volume_enabled">false</bool>
+
+    <!--  Whether Multiuser UI should be shown -->
+    <bool name="config_enableMultiUserUI">true</bool>
+
+    <!--  Maximum number of supported users -->
+    <integer name="config_multiuserMaximumUsers">8</integer>
+
+    <!-- Build fingerprint from a GMS certified device -->
+    <string name="config_certifiedFingerprint" translatable="false">google/angler/angler:6.0/MDB08L/2343525:user/release-keys</string>
+
+    <!-- Colon separated list of package names that should be granted Notification Listener access -->
+    <string name="config_defaultListenerAccessPackages" translatable="false">com.google.android.apps.nexuslauncher:com.google.android.setupwizard:com.google.android.apps.pixelmigrate:com.google.android.as:com.google.android.projection.gearhead:com.android.launcher3:co.zephyrus.glyph</string>
+
+
+    <!-- Name of the font family to use in the default lockscreen clock -->
+    <string name="config_clockFontFamily" translatable="false">google-sans-clock</string>
+
+</resources>

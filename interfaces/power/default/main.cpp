@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "vendor.aospa.power-service"
+#define LOG_TAG "vendor.zephyrus.power-service"
 
 #include <android-base/logging.h>
 #include <android/binder_manager.h>
@@ -22,7 +22,7 @@
 
 #include "PowerFeature.h"
 
-using ::aidl::vendor::aospa::power::PowerFeature;
+using ::aidl::vendor::zephyrus::power::PowerFeature;
 
 int main() {
     ABinderProcess_setThreadPoolMaxThreadCount(0);

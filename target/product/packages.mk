@@ -46,12 +46,12 @@ PRODUCT_PACKAGES += \
     ParanoidSense
 
 # Paranoid Packages (OTA)
-ifneq ($(filter RELEASE BETA,$(AOSPA_BUILDTYPE)),)
+ifneq ($(filter RELEASE BETA,$(ZEPHYRUS_BUILDTYPE)),)
 PRODUCT_PACKAGES += ParanoidHub
 endif
 
 PRODUCT_PACKAGES += \
-    init.aospa-hub.rc
+    init.zephyrus-hub.rc
 
 # Paranoid ThemePicker
 PRODUCT_PACKAGES += \
@@ -63,7 +63,7 @@ PRODUCT_PACKAGES += \
 
 # Gestures
 PRODUCT_PACKAGES += \
-    vendor.aospa.power-service
+    vendor.zephyrus.power-service
 
 # Repainter (kdrag0n)
 PRODUCT_PACKAGES += \

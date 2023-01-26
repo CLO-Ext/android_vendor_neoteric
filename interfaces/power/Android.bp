@@ -13,10 +13,10 @@
 // limitations under the License.
 
 aidl_interface {
-    name: "vendor.aospa.power",
+    name: "vendor.zephyrus.power",
     vendor_available: true,
     srcs: [
-        "vendor/aospa/power/*.aidl",
+        "vendor/zephyrus/power/*.aidl",
     ],
     stability: "vintf",
     backend: {

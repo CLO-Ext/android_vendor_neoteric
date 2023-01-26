@@ -1,4 +1,4 @@
-function __print_aospa_functions_help() {
+function __print_zephyrus_functions_help() {
 cat <<EOF
 Additional Paranoid Android functions:
 - clomerge:        Utility to merge CLO tags.
@@ -12,13 +12,13 @@ function clomerge()
     target_branch=$1
     set_stuff_for_environment
     T=$(gettop)
-    python3 $T/vendor/aospa/build/tools/merge-clo.py $target_branch
+    python3 $T/vendor/zephyrus/build/tools/merge-clo.py $target_branch
 }
 
 function repopick()
 {
     T=$(gettop)
-    $T/vendor/aospa/build/tools/repopick.py $@
+    $T/vendor/zephyrus/build/tools/repopick.py $@
 }
 
 function sort-blobs-list() {

@@ -16,23 +16,23 @@
 # Handle various build version information.
 #
 # Guarantees that the following are defined:
-#     AOSPA_MAJOR_VERSION
-#     AOSPA_MINOR_VERSION
-#     AOSPA_BUILD_VARIANT
+#     ZEPHYRUS_MAJOR_VERSION
+#     ZEPHYRUS_MINOR_VERSION
+#     ZEPHYRUS_BUILD_VARIANT
 #
 
-# This is the global AOSPA version flavor that determines the focal point
-# behind our releases. This is bundled alongside $(AOSPA_MINOR_VERSION)
+# This is the global ZEPHYRUS version flavor that determines the focal point
+# behind our releases. This is bundled alongside $(ZEPHYRUS_MINOR_VERSION)
 # and only changes per major Android releases.
-AOSPA_MAJOR_VERSION := topaz
+ZEPHYRUS_MAJOR_VERSION := topaz
 
 # The version code is the upgradable portion during the cycle of
 # every major Android release. Each version code upgrade indicates
 # our own major release during each lifecycle.
-ifdef AOSPA_BUILDVERSION
-    AOSPA_MINOR_VERSION := $(AOSPA_BUILDVERSION)
+ifdef ZEPHYRUS_BUILDVERSION
+    ZEPHYRUS_MINOR_VERSION := $(ZEPHYRUS_BUILDVERSION)
 else
-    AOSPA_MINOR_VERSION := 1
+    ZEPHYRUS_MINOR_VERSION := 1
 endif
 
 # Build Variants
@@ -40,37 +40,37 @@ endif
 # Alpha: Development / Test releases
 # Beta: Public releases with CI
 # Release: Final Product | No Tagging
-ifdef AOSPA_BUILDTYPE
-  ifeq ($(AOSPA_BUILDTYPE), ALPHA)
-      AOSPA_BUILD_VARIANT := alpha
-  else ifeq ($(AOSPA_BUILDTYPE), BETA)
-      AOSPA_BUILD_VARIANT := beta
-  else ifeq ($(AOSPA_BUILDTYPE), RELEASE)
-      AOSPA_BUILD_VARIANT := release
+ifdef ZEPHYRUS_BUILDTYPE
+  ifeq ($(ZEPHYRUS_BUILDTYPE), ALPHA)
+      ZEPHYRUS_BUILD_VARIANT := alpha
+  else ifeq ($(ZEPHYRUS_BUILDTYPE), BETA)
+      ZEPHYRUS_BUILD_VARIANT := beta
+  else ifeq ($(ZEPHYRUS_BUILDTYPE), RELEASE)
+      ZEPHYRUS_BUILD_VARIANT := release
   endif
 else
-  AOSPA_BUILD_VARIANT := unofficial
+  ZEPHYRUS_BUILD_VARIANT := unofficial
 endif
 
 # Build Date
 BUILD_DATE := $(shell date -u +%Y%m%d)
 
-# AOSPA Version
-TMP_AOSPA_VERSION := $(AOSPA_MAJOR_VERSION)-
-ifeq ($(filter release,$(AOSPA_BUILD_VARIANT)),)
-    TMP_AOSPA_VERSION += $(AOSPA_BUILD_VARIANT)-
+# ZEPHYRUS Version
+TMP_ZEPHYRUS_VERSION := $(ZEPHYRUS_MAJOR_VERSION)-
+ifeq ($(filter release,$(ZEPHYRUS_BUILD_VARIANT)),)
+    TMP_ZEPHYRUS_VERSION += $(ZEPHYRUS_BUILD_VARIANT)-
 endif
-ifeq ($(filter unofficial,$(AOSPA_BUILD_VARIANT)),)
-    TMP_AOSPA_VERSION += $(AOSPA_MINOR_VERSION)-
+ifeq ($(filter unofficial,$(ZEPHYRUS_BUILD_VARIANT)),)
+    TMP_ZEPHYRUS_VERSION += $(ZEPHYRUS_MINOR_VERSION)-
 endif
-TMP_AOSPA_VERSION += $(AOSPA_BUILD)-$(BUILD_DATE)
-AOSPA_VERSION := $(shell echo $(TMP_AOSPA_VERSION) | tr -d '[:space:]')
+TMP_ZEPHYRUS_VERSION += $(ZEPHYRUS_BUILD)-$(BUILD_DATE)
+ZEPHYRUS_VERSION := $(shell echo $(TMP_ZEPHYRUS_VERSION) | tr -d '[:space:]')
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.aospa.version=$(AOSPA_VERSION)
+    ro.zephyrus.version=$(ZEPHYRUS_VERSION)
 
 # The properties will be uppercase for parse by Settings, etc.
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.aospa.version.major=$(shell V1=$(AOSPA_MAJOR_VERSION); echo $${V1^}) \
-    ro.aospa.version.minor=$(AOSPA_MINOR_VERSION) \
-    ro.aospa.build.variant=$(shell V2=$(AOSPA_BUILD_VARIANT); echo $${V2^})
+    ro.zephyrus.version.major=$(shell V1=$(ZEPHYRUS_MAJOR_VERSION); echo $${V1^}) \
+    ro.zephyrus.version.minor=$(ZEPHYRUS_MINOR_VERSION) \
+    ro.zephyrus.build.variant=$(shell V2=$(ZEPHYRUS_BUILD_VARIANT); echo $${V2^})

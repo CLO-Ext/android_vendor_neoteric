@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "vendor.aospa.power-service"
+#define LOG_TAG "vendor.zephyrus.power-service"
 // #define LOG_NDEBUG 0
 
 #include "PowerFeature.h"
@@ -25,7 +25,7 @@
 
 namespace aidl {
 namespace vendor {
-namespace aospa {
+namespace zephyrus {
 namespace power {
 
 static constexpr int kInputEventWakeupModeOff = 4;
@@ -170,6 +170,6 @@ void PowerFeature::sysFsWrite(const char *file_node, const input_event *ev) {
 }
 
 }  // namespace power
-}  // namespace aospa
+}  // namespace zephyrus
 }  // namespace vendor
 }  // namespace aidl

@@ -14,11 +14,11 @@
 
 # Overlays
 PRODUCT_PACKAGES += \
-    AOSPAFrameworksOverlay \
-    AOSPAImmersiveNavigationOverlay \
-    AOSPASettingsOverlay \
-    AOSPASettingsProviderOverlay \
-    AOSPASystemUIOverlay \
+    ZEPHYRUSFrameworksOverlay \
+    ZEPHYRUSImmersiveNavigationOverlay \
+    ZEPHYRUSSettingsOverlay \
+    ZEPHYRUSSettingsProviderOverlay \
+    ZEPHYRUSSystemUIOverlay \
     FontGoogleSansLatoOverlay \
     FontHarmonySansOverlay \
     FontInterOverlay \
@@ -57,5 +57,5 @@ PRODUCT_PACKAGES += \
     IconPackRoundedThemePickerOverlay \
     ParanoidLauncherOverlay
 
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/aospa/overlay/static
-PRODUCT_PACKAGE_OVERLAYS += vendor/aospa/overlay/static
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/zephyrus/overlay/static
+PRODUCT_PACKAGE_OVERLAYS += vendor/zephyrus/overlay/static

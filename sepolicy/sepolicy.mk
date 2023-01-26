@@ -13,10 +13,10 @@
 # limitations under the License.
 
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
-    vendor/aospa/sepolicy/private
+    vendor/zephyrus/sepolicy/private
 
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += \
-    vendor/aospa/sepolicy/public
+    vendor/zephyrus/sepolicy/public
 
 BOARD_VENDOR_SEPOLICY_DIRS += \
-    vendor/aospa/sepolicy/vendor
+    vendor/zephyrus/sepolicy/vendor

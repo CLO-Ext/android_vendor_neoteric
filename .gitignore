@@ -1,5 +1,5 @@
-# AOSPA app_overrides
+# ZEPHYRUS app_overrides
 apps/*
 
-# AOSPA Prebuilts
+# ZEPHYRUS Prebuilts
 prebuilt/
