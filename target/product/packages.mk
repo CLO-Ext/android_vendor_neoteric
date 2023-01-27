@@ -85,6 +85,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     tcmiface \
     telephony-ext
+ 
+# ThemePicker
+PRODUCT_PACKAGES += \
+    ThemePicker
 
 # WiFi
 PRODUCT_PACKAGES += \
