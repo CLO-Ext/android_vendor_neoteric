@@ -265,4 +265,7 @@
         <item>com.google.android.calendar</item>
         <item>com.google.android.gm</item>
     </string-array>
+    
+     <!-- Name of the font family to use in the default lockscreen clock -->
+    <string name="config_clockFontFamily" translatable="false">google-sans-clock</string>
 </resources>
