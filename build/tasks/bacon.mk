@@ -1,5 +1,3 @@
-CUSTOM_ROM_VERSION := 13.2
-
 ZEPHYRUS_DATE_YEAR := $(shell date -u +%Y)
 ZEPHYRUS_DATE_MONTH := $(shell date -u +%m)
 ZEPHYRUS_DATE_DAY := $(shell date -u +%d)

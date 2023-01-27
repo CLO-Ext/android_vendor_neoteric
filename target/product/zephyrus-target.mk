@@ -44,8 +44,8 @@ $(call inherit-product, vendor/zephyrus/target/product/properties.mk)
 # Include APNs
 $(call inherit-product, vendor/zephyrus/telephony/telephony.mk)
 
-# Include APNs
-$(call inherit-product, vendor/zephyrus/telephony/telephony.mk)
+# Version
+$(call inherit-product, vendor/zephyrus/target/product/version.mk)
 
 # Include GMS, Modules, and Pixel features.
 $(call inherit-product, vendor/google/gms/config.mk)
