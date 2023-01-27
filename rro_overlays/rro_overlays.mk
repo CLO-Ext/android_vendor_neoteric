@@ -6,6 +6,12 @@ PRODUCT_PACKAGES += \
     CellBroadcastServiceOverlay \
     ContactsProviderOverlay \
     DMServiceOverlay \
+    FontGoogleSansLatoOverlay \
+    FontHarmonySansOverlay \
+    FontInterOverlay \
+    FontManropeOverlay \
+    FontRobotoOverlay \
+    FontUrbanistOverlay \
     GoogleConfigOverlay \
     GooglePermissionControllerOverlay \
     GoogleWebViewOverlay \

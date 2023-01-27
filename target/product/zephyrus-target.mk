@@ -23,7 +23,9 @@ $(call inherit-product, vendor/zephyrus/bootanimation/bootanimation.mk)
 DONT_DEXPREOPT_PREBUILTS := true
 
 # Fonts
-include vendor/zephyrus/prebuilts/fonts/fonts.mk
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,vendor/zephyrus/prebuilts/fonts/,$(TARGET_COPY_OUT_PRODUCT)/fonts) \
+    vendor/zephyrus/target/config/fonts_customization.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/fonts_customization.xml
 
 $(call inherit-product, external/google-fonts/lato/fonts.mk)
 
