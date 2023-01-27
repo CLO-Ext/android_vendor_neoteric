@@ -170,7 +170,7 @@
     </string-array>
 
    <!-- Colon separated list of package names that should be granted Notification Listener access -->
-    <string name="config_defaultListenerAccessPackages">com.android.launcher3:com.google.android.apps.nexuslauncher:com.google.android.setupwizard:com.google.android.apps.pixelmigrate:com.google.android.as:com.google.android.projection.gearhead</string>
+    <string name="config_defaultListenerAccessPackages">com.android.launcher3:com.google.android.setupwizard:com.google.android.apps.pixelmigrate:com.google.android.as:com.google.android.projection.gearhead</string>
 
     <!-- Default autofill service to enable [DO NOT TRANSLATE] -->
     <string name="config_defaultAutofillService" translatable="false">com.google.android.gms/.autofill.service.AutofillService</string>
@@ -213,20 +213,6 @@
          time zone provider in GmsCore. The provider implementation is hosted in GmsCore. -->
     <string name="config_primaryLocationTimeZoneProviderPackageName" translatable="false">com.google.android.gms</string>
 
-    <!-- Component name for the activity that will be presenting the Recents UI, which will receive
-         special permissions for API related to fetching and presenting recent tasks. The default
-         configuration uses Launcehr3QuickStep as default launcher and points to the corresponding
-         recents component. When using a different default launcher, change this appropriately or
-         use the default systemui implementation: com.android.systemui/.recents.RecentsActivity -->
-    <string name="config_recentsComponentName" translatable="false"
-            >com.google.android.apps.nexuslauncher/com.android.quickstep.RecentsActivity</string>
-
-    <!-- This is the default launcher package with an activity to use on secondary displays that
-         support system decorations.
-         This launcher package must have an activity that supports multiple instances and has
-         corresponding launch mode set in AndroidManifest.
-         {@see android.view.Display#FLAG_SHOULD_SHOW_SYSTEM_DECORATIONS} -->
-    <string name="config_secondaryHomePackage" translatable="false">com.google.android.apps.nexuslauncher</string>
     <!-- Flag indicating if help links for Settings app should be enabled. -->
     <bool name="config_settingsHelpLinksEnabled">true</bool>
 </resources>
