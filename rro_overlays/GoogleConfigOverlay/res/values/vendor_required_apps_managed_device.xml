@@ -35,5 +35,6 @@
         <item>com.google.android.documentsui</item>
         <item>com.google.android.apps.nbu.files</item>
         <item>com.google.android.apps.tips</item>
+        <item>com.google.android.projection.gearhead</item>
     </string-array>
 </resources>

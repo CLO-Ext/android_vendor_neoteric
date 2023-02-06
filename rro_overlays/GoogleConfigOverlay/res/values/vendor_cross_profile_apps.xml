@@ -24,5 +24,6 @@
         <item>com.google.android.inputmethod.latin</item>
         <item>com.google.android.inputmethod.latin.dev</item>
         <item>com.google.android.inputmethod.latin.canary</item>
+        <item>com.google.android.projection.gearhead</item>
     </string-array>
 </resources>

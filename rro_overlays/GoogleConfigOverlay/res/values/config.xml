@@ -183,6 +183,9 @@
         <item>com.google.android.gms</item>
         <item>com.google.android.apps.gcs</item>
     </string-array>
+    
+    <!-- The names of the packages that will hold the automotive projection role. -->
+    <string name="config_systemAutomotiveProjection" translatable="false">com.google.android.projection.gearhead</string>
 
     <!-- The name of the package that will hold the speech recognizer role by default. -->
     <string name="config_systemSpeechRecognizer" translatable="false">com.google.android.tts</string>
