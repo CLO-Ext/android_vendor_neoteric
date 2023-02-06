@@ -40,7 +40,7 @@ from git.exc import GitCommandError
 
 BASE_URL = "https://git.codelinaro.org/clo/la/"
 WORKING_DIR = "{0}/../../../..".format(os.path.dirname(os.path.realpath(__file__)))
-MANIFEST_NAME = "zephyrus.xml"
+MANIFEST_NAME = "/snippets/zephyrus.xml"
 REPOS_TO_MERGE = {}
 REPOS_RESULTS = {}
 
