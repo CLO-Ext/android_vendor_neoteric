@@ -94,3 +94,7 @@ PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 # but also allow explicit overriding for testing and development.
 SYSTEM_OPTIMIZE_JAVA ?= true
 SYSTEMUI_OPTIMIZE_JAVA ?= true
+
+# Pixel customization
+TARGET_INCLUDE_STOCK_ARCORE ?= true
+TARGET_SUPPORTS_CALL_RECORDING ?= true
