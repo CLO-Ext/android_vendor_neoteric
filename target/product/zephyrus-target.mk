@@ -54,6 +54,9 @@ $(call inherit-product, vendor/google/gms/config.mk)
 # Theme overlays
 $(call inherit-product, vendor/themes/common.mk)
 
+# DesktopMode
+$(call inherit-product, packages/services/VncFlinger/product.mk)
+
 ifneq ($(TARGET_FLATTEN_APEX), true)
 $(call inherit-product-if-exists, vendor/google/modules/build/mainline_modules.mk)
 else

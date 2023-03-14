@@ -20,6 +20,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     curl
 
+# Desktop Mode
+PRODUCT_PACKAGES += \
+    DesktopMode
+
 # Exfat FS
 PRODUCT_PACKAGES += \
     fsck.exfat \
