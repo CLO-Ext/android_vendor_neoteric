@@ -15,6 +15,7 @@
 # Overlays
 $(call inherit-product, vendor/zephyrus/overlay/overlay.mk)
 $(call inherit-product, vendor/zephyrus/rro_overlays/rro_overlays.mk)
+$(call inherit-product, vendor/zephyrus/zeph_overlays/zeph_overlays.mk)
 
 # Bootanimation
 $(call inherit-product, vendor/zephyrus/bootanimation/bootanimation.mk)
