@@ -89,6 +89,10 @@ PRODUCT_BOOT_JARS += \
 # ThemePicker
 PRODUCT_PACKAGES += \
     ThemePicker
+    
+# Wallpapers
+PRODUCT_PACKAGES += \
+    ProtonWallpaperStub
 
 # WiFi
 PRODUCT_PACKAGES += \
