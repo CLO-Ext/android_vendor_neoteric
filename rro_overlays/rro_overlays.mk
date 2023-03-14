@@ -7,12 +7,11 @@ PRODUCT_PACKAGES += \
     ContactsProviderOverlay \
     DMServiceOverlay \
     DisableComponentOverlay \
-    FontGoogleSansLatoOverlay \
-    FontHarmonySansOverlay \
-    FontInterOverlay \
-    FontManropeOverlay \
-    FontRobotoOverlay \
-    FontUrbanistOverlay \
+    FontKaiOverlay \
+    FontSamOverlay \
+    FontVictorOverlay \
+    FontHKGroteskOverlay \
+    FontHarmonyOSSansOverlay \
     GoogleConfigOverlay \
     GooglePermissionControllerOverlay \
     GoogleWebViewOverlay \
