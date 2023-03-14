@@ -6,6 +6,7 @@ PRODUCT_PACKAGES += \
     CellBroadcastServiceOverlay \
     ContactsProviderOverlay \
     DMServiceOverlay \
+    DisableComponentOverlay \
     FontGoogleSansLatoOverlay \
     FontHarmonySansOverlay \
     FontInterOverlay \
