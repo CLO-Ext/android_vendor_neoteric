@@ -57,6 +57,9 @@ $(call inherit-product, vendor/themes/common.mk)
 # DesktopMode
 $(call inherit-product, packages/services/VncFlinger/product.mk)
 
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.software.freeform_window_management.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.software.freeform_window_management.xml
+
 ifneq ($(TARGET_FLATTEN_APEX), true)
 $(call inherit-product-if-exists, vendor/google/modules/build/mainline_modules.mk)
 else
