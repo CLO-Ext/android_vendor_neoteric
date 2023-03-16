@@ -28,6 +28,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fsck.exfat \
     mkfs.exfat
+    
+# GameSpace
+PRODUCT_PACKAGES += \
+    GameSpace
 
 # HIDL
 PRODUCT_PACKAGES += \
