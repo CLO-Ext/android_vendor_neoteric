@@ -12,6 +12,7 @@
       <item>surya</item>
       <item>veux</item>
       <item>violet</item>
+      <item>opkona</item>
    </string-array>
 
    <string-array name="config_maintainer_name_list" translatable="false">
@@ -26,6 +27,7 @@
       <item>Hazama25</item>
       <item>SharmagRit</item>
       <item>kibria5</item>
+      <item>HELLBOY017</item>
    </string-array>
 
    <string-array name="config_maintainer_link_list" translatable="false">
@@ -40,9 +42,11 @@
       <item>https://t.me/Hazama25</item>
       <item>https://t.me/SharmagRit</item>
       <item>https://t.me/kibria5</item>
+      <item>https://t.me/HELLBOY017</item>
    </string-array>
 
    <string-array name="config_donate_list" translatable="false">
+      <item>https://www.paypal.com/paypalme/Manikantaraavi</item>
       <item>https://www.paypal.com/paypalme/Manikantaraavi</item>
       <item>https://www.paypal.com/paypalme/Manikantaraavi</item>
       <item>https://www.paypal.com/paypalme/Manikantaraavi</item>
@@ -68,6 +72,7 @@
       <item>https://t.me/ProjectZephyrusCommunity</item>
       <item>https://t.me/ProjectZephyrusCommunity</item>
       <item>https://t.me/ProjectZephyrusCommunity</item>
+      <item>https://t.me/ZephyrusOP8</item>
    </string-array>
    
 </resources>
