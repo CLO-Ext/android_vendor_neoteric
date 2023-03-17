@@ -99,7 +99,6 @@ SYSTEM_OPTIMIZE_JAVA ?= true
 SYSTEMUI_OPTIMIZE_JAVA ?= true
 
 # Pixel customization
-TARGET_INCLUDE_STOCK_ARCORE ?= true
 TARGET_SUPPORTS_CALL_RECORDING ?= true
 
 # Face Unlock
