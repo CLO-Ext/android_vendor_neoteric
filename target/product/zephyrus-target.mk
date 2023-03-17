@@ -112,3 +112,8 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.biometrics.face.xml
 endif
+
+# OTA
+PRODUCT_COPY_FILES += \
+    vendor/zephyrus/init/zeph-updates.rc::$(TARGET_COPY_OUT_SYSTEM)/etc/init/zeph-updates.rc \
+    vendor/zephyrus/init/clean_cache.sh::$(TARGET_COPY_OUT_SYSTEM)/bin/clean_cache.sh

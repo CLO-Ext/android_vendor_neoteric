@@ -98,6 +98,10 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     ThemePicker
     
+# Updates
+PRODUCT_PACKAGES += \
+    Updates
+    
 # Wallpapers
 PRODUCT_PACKAGES += \
     ProtonWallpaperStub

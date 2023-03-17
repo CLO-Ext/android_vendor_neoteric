@@ -13,4 +13,5 @@ SHA256 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/sha256sum
 bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(ZEPHYRUS_TARGET_PACKAGE)
 	$(hide) $(SHA256) $(ZEPHYRUS_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(ZEPHYRUS_TARGET_PACKAGE).sha256sum
+	$(hide) ./vendor/zephyrus/tools/generate_json_build_info.sh $(ZEPHYRUS_TARGET_PACKAGE)
 	@echo "Package Complete: $(ZEPHYRUS_TARGET_PACKAGE)" >&2
