@@ -28,7 +28,7 @@ then
     echo "{" >> $JSON
     echo "    \"version\": \""$VERSION"\"," >> $JSON
     echo "    \"date\": \""$DATE"\"," >> $JSON
-    echo "    \"url\": \"https://sourceforge.net/projects/projectzephyrus/files/"$DEVICE"/"$NAME"/download\"," >> $JSON
+    echo "    \"url\": \"https://sourceforge.net/projects/projectzephyrus-clo/files/"$DEVICE"/"$NAME"/download\"," >> $JSON
     echo "    \"id\": \""$SHA1"\"," >> $JSON
     echo "    \"filename\": \""$NAME"\"," >> $JSON
     echo "    \"filesize\": \""$SIZE"\"," >> $JSON
