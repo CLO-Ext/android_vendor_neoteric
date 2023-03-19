@@ -14,7 +14,7 @@
 
 # Camera
 PRODUCT_PACKAGES += \
-    GoogleCameraGo
+    Aperture
 
 # curl
 PRODUCT_PACKAGES += \
