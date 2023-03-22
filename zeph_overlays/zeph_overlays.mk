@@ -14,4 +14,6 @@
 
 PRODUCT_PACKAGES += \
     NavigationBarModeGesturalOverlayFS \
-    NavigationBarModeGesturalOverlayIM
+    NavigationBarModeGesturalOverlayIM \
+    NavigationBarModeGesturalOverlayImeNarrow
+    

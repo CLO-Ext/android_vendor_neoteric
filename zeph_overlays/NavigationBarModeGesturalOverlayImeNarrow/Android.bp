@@ -1,0 +1,4 @@
+runtime_resource_overlay {
+    name: "NavigationBarModeGesturalOverlayImeNarrow",
+    product_specific: true,
+}
