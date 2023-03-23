@@ -1,60 +1,102 @@
 <fonts-modification version="1">
 
-  <!-- Lockscreen Clock Fonts -->
-  <family customizationType="new-named-family" name="adventpro">
-    <font weight="300" style="normal" postScriptName="adventpro">AdventPro-Regular.ttf</font>
-  </family>
-  <alias name="adventpro" to="adventpro" weight="300" />
-
-  <family customizationType="new-named-family" name="alien-league">
-    <font weight="300" style="normal" postScriptName="alien-league">AlienLeague-Regular.ttf</font>
-  </family>
-  <alias name="alien-league" to="alien-league" weight="300" />
-
-  <family customizationType="new-named-family" name="bignoodle-italic">
-    <font weight="300" style="normal" postScriptName="bignoodle-italic">BigNoodleTilting-Italic.ttf</font>
-  </family>
-  <alias name="bignoodle-italic" to="bignoodle-italic" weight="300" />
-
-  <family customizationType="new-named-family" name="biko">
-    <font weight="300" style="normal" postScriptName="biko">Biko-Regular.ttf</font>
-  </family>
-  <alias name="biko" to="biko" weight="300" />
-
-  <family customizationType="new-named-family" name="ginora-sans">
-    <font weight="300" style="normal" postScriptName="ginora-sans">GinoraSans-Regular.ttf</font>
-  </family>
-  <alias name="ginora-sans" to="ginora-sans" weight="300" />
-
-  <family customizationType="new-named-family" name="riviera">
-    <font weight="300" style="normal" postScriptName="riviera">Riviera-Regular.ttf</font>
-  </family>
-  <alias name="riviera" to="riviera" weight="300" />
-
-  <family customizationType="new-named-family" name="roadrage-sys">
-    <font weight="300" style="normal" postScriptName="roadrage-sys">RoadRage-Regular.ttf</font>
-  </family>
-  <alias name="roadrage-sys" to="roadrage-sys" weight="300" />
-
-  <family customizationType="new-named-family" name="sedgwick-ave">
-    <font weight="300" style="normal" postScriptName="sedgwick-ave">SedgwickAveDisplay-Regular.ttf</font>
-  </family>
-  <alias name="sedgwick-ave" to="sedgwick-ave" weight="300" />
-
-  <family customizationType="new-named-family" name="snowstorm-sys">
-    <font weight="300" style="normal" postScriptName="snowstorm-sys">Snowstorm-Regular.ttf</font>
-  </family>
-  <alias name="snowstorm-sys" to="snowstorm-sys" weight="300" />
-
-  <family customizationType="new-named-family" name="unionfont">
-    <font weight="300" style="normal" postScriptName="unionfont">Union-Regular.ttf</font>
-  </family>
-  <alias name="unionfont" to="unionfont" weight="300" />
-
-  <family customizationType="new-named-family" name="vibur">
-    <font weight="300" style="normal" postScriptName="vibur">Vibur.ttf</font>
-  </family>
-  <alias name="vibur" to="vibur" weight="300" />
+    <!-- Lockscreen Clock Fonts -->
+    <family customizationType="new-named-family" name="adventpro">
+        <font weight="300" style="normal">AdventPro-Regular.ttf</font>
+    </family>
+    <family customizationType="new-named-family" name="alien-league">
+        <font weight="300" style="normal">AlienLeague-Regular.ttf</font>
+    </family>
+    <family customizationType="new-named-family" name="arcadeinterlaced">
+        <font weight="300" style="normal">ArcadeInterlaced.ttf</font>
+    </family>
+    <family customizationType="new-named-family" name="bignoodle-italic">
+        <font weight="300" style="normal">BigNoodleTilting-Italic.ttf</font>
+    </family>
+    <family customizationType="new-named-family" name="biko">
+        <font weight="300" style="normal">Biko-Regular.ttf</font>
+    </family>
+    <family customizationType="new-named-family" name="ginora-sans">
+        <font weight="300" style="normal">GinoraSans-Regular.ttf</font>
+    </family>
+    <family customizationType="new-named-family" name="karmaticarcade">
+        <font weight="300" style="normal">KarmaticArcade.ttf</font>
+    </family>
+    <family customizationType="new-named-family" name="liquidcrystal">
+        <font weight="300" style="normal">LiquidCrystal-Bold.ttf</font>
+    </family>
+    <family customizationType="new-named-family" name="riviera">
+        <font weight="300" style="normal">Riviera-Regular.ttf</font>
+    </family>
+    <family customizationType="new-named-family" name="roadrage-sys">
+        <font weight="300" style="normal">RoadRage-Regular.ttf</font>
+    </family>
+    <family customizationType="new-named-family" name="snowstorm-sys">
+        <font weight="300" style="normal">Snowstorm-Regular.ttf</font>
+    </family>
+    <family customizationType="new-named-family" name="unionfont">
+        <font weight="300" style="normal">Union-Regular.ttf</font>
+    </family>
+    <family customizationType="new-named-family" name="v5prophit">
+        <font weight="300" style="normal">V5PRF.ttf</font>
+    </family>
+    <family customizationType="new-named-family" name="vibur">
+        <font weight="300" style="normal">Vibur.ttf</font>
+    </family>
+    <family customizationType="new-named-family" name="zerofour">
+        <font weight="300" style="normal">ZeroFour.ttf</font>
+    </family>
+    <family customizationType="new-named-family" name="odibee-sans">
+        <font weight="300" style="normal">OdibeeSans-Regular.ttf</font>
+    </family>
+    <family customizationType="new-named-family" name="permanent-marker">
+        <font weight="300" style="normal">PermanentMarker.ttf</font>
+    </family>
+    <family customizationType="new-named-family" name="vg5000">
+        <font weight="300" style="normal">VG5000-Regular.ttf</font>
+    </family>
+    <family customizationType="new-named-family" name="3d-isometric-black">
+        <font weight="700" style="normal">3DIsometric-Black.ttf</font>
+    </family>
+    <family customizationType="new-named-family" name="3d-isometric-bold">
+        <font weight="600" style="normal">3DIsometric-Bold.ttf</font>
+    </family>
+    <family customizationType="new-named-family" name="baltic-bodden">
+        <font weight="300" style="normal">BalticBodden.ttf</font>
+    </family>
+    <family customizationType="new-named-family" name="baltic-coast">
+        <font weight="300" style="normal">BalticCoast.ttf</font>
+    </family>
+    <family customizationType="new-named-family" name="baltic-dune">
+        <font weight="300" style="normal">BalticDune.ttf</font>
+    </family>
+    <family customizationType="new-named-family" name="baltic-storm">
+        <font weight="300" style="normal">BalticStorm.ttf</font>
+    </family>
+    <family customizationType="new-named-family" name="cafe24-decoshadow">
+        <font weight="300" style="normal">Cafe24Decoshadow.ttf</font>
+    </family>
+    <family customizationType="new-named-family" name="forta">
+        <font weight="400" style="normal">Forta.ttf</font>
+    </family>
+    <family customizationType="new-named-family" name="museo-moderno">
+        <font weight="300" style="normal">MuseoModerno.ttf</font>
+    </family>
+    <family customizationType="new-named-family" name="mx-wasgard">
+        <font weight="300" style="normal">mx-wasgard.ttf</font>
+    </family>
+    <family customizationType="new-named-family" name="neptun-cat">
+        <font weight="400" style="normal">NeptunCAT.ttf</font>
+    </family>
+    <family customizationType="new-named-family" name="prodelt-co">
+        <font weight="300" style="normal">ProdeltCo.ttf</font>
+    </family>
+    <family customizationType="new-named-family" name="rubik-glitch">
+        <font weight="700" style="normal">Rubik-Glitch-Regular.ttf</font>
+    </family>
+    <family customizationType="new-named-family" name="tourney-medium">
+        <font weight="500" style="normal">Tourney-Medium.ttf</font>
+    </family>
 
   <family customizationType="new-named-family" name="google-sans">
     <font weight="400" style="normal">GoogleSans-Regular.ttf
