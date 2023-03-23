@@ -16,11 +16,7 @@
  * limitations under the License.
  */
 -->
-<resources>
-    <dimen name="config_backGestureInset">30dip</dimen>
-    <dimen name="navigation_bar_frame_height">20dp</dimen>
-    <dimen name="navigation_bar_gesture_height">24dp</dimen>
-    <dimen name="navigation_bar_height">16dp</dimen>
-    <dimen name="navigation_bar_height_landscape">16dp</dimen>
-    <dimen name="navigation_bar_width">16dp</dimen>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Name of overlay [CHAR LIMIT=64] -->
+    <string name="navigation_bar_mode_title" translatable="false">Gestural Navigation Bar</string>
 </resources>
