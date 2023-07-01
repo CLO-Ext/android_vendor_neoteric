@@ -21,7 +21,7 @@ PRODUCT_PACKAGES += \
     curl
 
 # Desktop Mode
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     DesktopMode
 
 # Exfat FS
@@ -30,7 +30,7 @@ PRODUCT_PACKAGES += \
     mkfs.exfat
     
 # GameSpace
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     GameSpace
 
 # HIDL
@@ -103,8 +103,8 @@ PRODUCT_PACKAGES += \
     ThemePicker
     
 # Updates
-PRODUCT_PACKAGES += \
-    Updates
+#PRODUCT_PACKAGES += \
+#    Updates
     
 # Wallpapers
 PRODUCT_PACKAGES += \
