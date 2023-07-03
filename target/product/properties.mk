@@ -22,7 +22,8 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
 
 # Disable blur on app-launch
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
-    ro.launcher.blur.appLaunch=0
+    ro.launcher.blur.appLaunch=0 \
+    ro.sf.use_latest_hwc_vsync_period=0
 
 # Disable async MTE on system_server
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
