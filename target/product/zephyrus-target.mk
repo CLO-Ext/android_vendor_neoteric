@@ -55,7 +55,7 @@ $(call inherit-product, vendor/google/gms/config.mk)
 $(call inherit-product, vendor/themes/common.mk)
 
 # DesktopMode
-#$(call inherit-product, packages/services/VncFlinger/product.mk)
+$(call inherit-product, packages/services/VncFlinger/product.mk)
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.freeform_window_management.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.software.freeform_window_management.xml
@@ -100,17 +100,18 @@ SYSTEMUI_OPTIMIZE_JAVA ?= true
 
 # Pixel customization
 TARGET_SUPPORTS_CALL_RECORDING ?= true
+TARGET_SUPPORTS_QUICK_TAP ?= true
 
 # Face Unlock
-#TARGET_FACE_UNLOCK_SUPPORTED ?= true
-#ifeq ($(TARGET_FACE_UNLOCK_SUPPORTED),true)
-#PRODUCT_PACKAGES += \
+TARGET_FACE_UNLOCK_SUPPORTED ?= true
+ifeq ($(TARGET_FACE_UNLOCK_SUPPORTED),true)
+PRODUCT_PACKAGES += \
     FaceUnlockService
-#PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.face_unlock_service.enabled=$(TARGET_FACE_UNLOCK_SUPPORTED)
-#PRODUCT_COPY_FILES += \
+PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.biometrics.face.xml
-#endif
+endif
 
 # OTA
 PRODUCT_COPY_FILES += \
