@@ -19,5 +19,5 @@
     package="com.android.providers.media.overlay.pixel">
     <overlay android:isStatic="true" android:priority="0" android:targetName="MediaProviderConfig" android:targetPackage="com.google.android.providers.media.module"/>
 
-    <application android:hasCode="false"/>
+    <application android:allowBackup="false" android:hasCode="false"/>
 </manifest>

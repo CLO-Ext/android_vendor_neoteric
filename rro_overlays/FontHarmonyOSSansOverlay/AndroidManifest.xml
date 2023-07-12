@@ -17,7 +17,7 @@
         android:category="android.theme.customization.font"
         android:priority="1" />
 
-    <application
+    <application android:allowBackup="false"
         android:label="HarmonyOS Sans"
         android:hasCode="false" />
 

@@ -23,5 +23,5 @@
         android:category="com.android.internal.navigation_bar_mode"
         android:priority="69"/>
 
-    <application android:hasCode="false"/>
+    <application android:allowBackup="false" android:hasCode="false"/>
 </manifest>
