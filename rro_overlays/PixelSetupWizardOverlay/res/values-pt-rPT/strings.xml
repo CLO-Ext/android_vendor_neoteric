@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bc_welcome_message">Bem-vindo ao Project Zephyrus</string>
+    <string name="deferred_setup_wizard_title">Concluir configuração do Project Zephyrus</string>
+    <string name="device_name">Project Zephyrus</string>
+    <string name="setup_wizard_title">Configuração do Project Zephyrus</string>
+</resources>

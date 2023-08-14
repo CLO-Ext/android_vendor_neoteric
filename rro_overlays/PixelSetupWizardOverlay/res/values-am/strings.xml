@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bc_welcome_message">እንኳን ወደ የእርስዎ Project Zephyrus በደህና መጡ</string>
+    <string name="deferred_setup_wizard_title">Project Zephyrusን ማወቀር ይጨርሱ</string>
+    <string name="device_name">Project Zephyrus</string>
+    <string name="setup_wizard_title">የProject Zephyrus ውቅረት</string>
+</resources>

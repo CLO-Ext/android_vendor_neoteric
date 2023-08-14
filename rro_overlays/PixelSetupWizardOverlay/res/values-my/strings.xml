@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bc_welcome_message">သင်၏ Project Zephyrus က ကြိုဆိုပါသည်</string>
+    <string name="deferred_setup_wizard_title">Project Zephyrus ကို စနစ်ထည့်သွင်းပြီးပါပြီ</string>
+    <string name="device_name">Project Zephyrus</string>
+    <string name="setup_wizard_title">Project Zephyrus စနစ်ထည့်သွင်းမှု</string>
+</resources>
