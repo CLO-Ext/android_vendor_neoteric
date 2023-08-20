@@ -21,11 +21,6 @@ $(call inherit-product, vendor/zephyrus/bootanimation/bootanimation.mk)
 # Don't dexpreopt prebuilts. (For GMS).
 DONT_DEXPREOPT_PREBUILTS := true
 
-# Fonts
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,vendor/zephyrus/prebuilts/fonts/,$(TARGET_COPY_OUT_PRODUCT)/fonts) \
-    vendor/zephyrus/target/config/fonts_customization.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/fonts_customization.xml
-
 $(call inherit-product, external/google-fonts/lato/fonts.mk)
 
 # Include Common Qualcomm Device Tree.
