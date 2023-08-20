@@ -1,4 +1,4 @@
-# Copyright (C) 2020 The Proton AOSP Project
+# Copyright (C) 2023 Project Zephyrus
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,9 +12,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Vendor overlay
-DEVICE_PACKAGE_OVERLAYS += vendor/zephyrus/overlay
-
-# Framework overlay needs to be a RRO
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS +=  \
-    vendor/zephyrus/overlay
+# Overlays
+PRODUCT_PACKAGES += \
+    DisableComponentOverlay \
+    NavigationBarModeGesturalOverlayFS \
+    NavigationBarModeGesturalOverlayIM \
+    NavigationBarModeGesturalOverlayImeNarrow \
+    PixelSetupWizardOverlay \
+    ZephFrameworksOverlay \
+    ZephLauncherOverlay \
+    ZephSettingsOverlay \
+    ZephSettingsProviderOverlay \
+    ZephSystemUIOverlay \
+    ZephUpdatesOverlay \
+    ZephWifiOverlay

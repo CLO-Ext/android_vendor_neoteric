@@ -14,8 +14,6 @@
 
 # Overlays
 $(call inherit-product, vendor/zephyrus/overlay/overlay.mk)
-$(call inherit-product, vendor/zephyrus/rro_overlays/rro_overlays.mk)
-$(call inherit-product, vendor/zephyrus/zeph_overlays/zeph_overlays.mk)
 
 # Bootanimation
 $(call inherit-product, vendor/zephyrus/bootanimation/bootanimation.mk)
@@ -48,8 +46,14 @@ $(call inherit-product, vendor/zephyrus/telephony/telephony.mk)
 # Version
 $(call inherit-product, vendor/zephyrus/target/product/version.mk)
 
-# Include GMS, Modules, and Pixel features.
+# Google - GMS, Pixel, and Mainline Modules
 $(call inherit-product, vendor/google/gms/config.mk)
+$(call inherit-product, vendor/google/pixel/config.mk)
+ifneq ($(TARGET_FLATTEN_APEX), true)
+$(call inherit-product-if-exists, vendor/google/modules/build/mainline_modules.mk)
+else
+$(call inherit-product-if-exists, vendor/google/modules/build/mainline_modules_flatten_apex.mk)
+endif
 
 # Theme overlays
 $(call inherit-product, vendor/themes/common.mk)
@@ -59,12 +63,6 @@ $(call inherit-product, packages/services/VncFlinger/product.mk)
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.freeform_window_management.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/android.software.freeform_window_management.xml
-
-ifneq ($(TARGET_FLATTEN_APEX), true)
-$(call inherit-product-if-exists, vendor/google/modules/build/mainline_modules.mk)
-else
-$(call inherit-product-if-exists, vendor/google/modules/build/mainline_modules_flatten_apex.mk)
-endif
 
 # Move Wi-Fi modules to vendor.
 PRODUCT_VENDOR_MOVE_ENABLED := true
