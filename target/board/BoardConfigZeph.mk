@@ -19,6 +19,7 @@ DISABLE_EAP_PROXY := true
 ifeq ($(call is-board-platform-in-list,$(QCOM_BOARD_PLATFORMS)),true)
 # Include our Qualcomm Board configuration.
 include device/qcom/common/BoardConfigQcom.mk
+include device/zephyrus/sepolicy/qcom/sepolicy.mk
 endif
 
 # Kernel configuration.
