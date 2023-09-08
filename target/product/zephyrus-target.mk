@@ -117,3 +117,7 @@ ifeq ($(USE_PIXEL_CHARGER_IMAGES),true)
 PRODUCT_PACKAGES += \
     product_charger_res_images
 endif
+
+# Permissions for lineage sdk services
+PRODUCT_COPY_FILES += \
+    vendor/zephyrus/target/config/permissions/org.lineageos.health.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/org.lineageos.health.xml
