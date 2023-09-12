@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="bc_welcome_message">Project Zephyrus түзмөгүңүзгө кош келиңиз</string>
-    <string name="deferred_setup_wizard_title">Project Zephyrus түзмөгүн аягына чейин жөндөңүз</string>
-    <string name="device_name">Project Zephyrus</string>
-    <string name="setup_wizard_title">Project Zephyrus түзмөгүн жөндөө</string>
+    <string name="bc_welcome_message">Neoteric OS түзмөгүңүзгө кош келиңиз</string>
+    <string name="deferred_setup_wizard_title">Neoteric OS түзмөгүн аягына чейин жөндөңүз</string>
+    <string name="device_name">Neoteric OS</string>
+    <string name="setup_wizard_title">Neoteric OS түзмөгүн жөндөө</string>
 </resources>

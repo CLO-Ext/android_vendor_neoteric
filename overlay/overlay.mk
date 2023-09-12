@@ -1,4 +1,4 @@
-# Copyright (C) 2023 Project Zephyrus
+# Copyright (C) 2023 Neoteric OS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,10 +19,10 @@ PRODUCT_PACKAGES += \
     NavigationBarModeGesturalOverlayIM \
     NavigationBarModeGesturalOverlayImeNarrow \
     PixelSetupWizardOverlay \
-    ZephFrameworksOverlay \
-    ZephLauncherOverlay \
-    ZephSettingsOverlay \
-    ZephSettingsProviderOverlay \
-    ZephSystemUIOverlay \
-    ZephUpdatesOverlay \
-    ZephWifiOverlay
+    NeotericFrameworksOverlay \
+    NeotericLauncherOverlay \
+    NeotericSettingsOverlay \
+    NeotericSettingsProviderOverlay \
+    NeotericSystemUIOverlay \
+    NeotericUpdatesOverlay \
+    NeotericWifiOverlay

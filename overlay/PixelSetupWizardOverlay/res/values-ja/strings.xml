@@ -2,6 +2,6 @@
 <resources>
     <string name="bc_welcome_message">P⁠i⁠x⁠e⁠l⁠ ⁠へよ⁠う⁠こ⁠そ</string>
     <string name="deferred_setup_wizard_title">セットアップを終了させる</string>
-    <string name="device_name">Project Zephyrus</string>
-    <string name="setup_wizard_title">Project Zephyrus の設定</string>
+    <string name="device_name">Neoteric OS</string>
+    <string name="setup_wizard_title">Neoteric OS の設定</string>
 </resources>

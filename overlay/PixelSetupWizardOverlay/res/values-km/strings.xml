@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="bc_welcome_message">សូមស្វាគមន៍មកកាន់ Project Zephyrus របស់អ្នក</string>
-    <string name="deferred_setup_wizard_title">បញ្ចប់​ការរៀបចំ Project Zephyrus</string>
-    <string name="device_name">Project Zephyrus</string>
-    <string name="setup_wizard_title">ការរៀបចំ Project Zephyrus</string>
+    <string name="bc_welcome_message">សូមស្វាគមន៍មកកាន់ Neoteric OS របស់អ្នក</string>
+    <string name="deferred_setup_wizard_title">បញ្ចប់​ការរៀបចំ Neoteric OS</string>
+    <string name="device_name">Neoteric OS</string>
+    <string name="setup_wizard_title">ការរៀបចំ Neoteric OS</string>
 </resources>

@@ -2,7 +2,7 @@
 # Documentation here:
 # https://github.com/LineageOS/android_build_soong/commit/8328367c44085b948c003116c0ed74a047237a69
 
-# Zephyrus Variables
+# Neotericyrus Variables
 
 PATH_OVERRIDE_SOONG := $(shell echo $(TOOLS_PATH_OVERRIDE))
 
@@ -17,19 +17,19 @@ EXPORT_TO_SOONG := \
     TARGET_KERNEL_CONFIG \
     TARGET_KERNEL_SOURCE
 
-SOONG_CONFIG_NAMESPACES += zephyrusVarsPlugin
+SOONG_CONFIG_NAMESPACES += neotericVarsPlugin
 
-SOONG_CONFIG_zephyrusVarsPlugin :=
+SOONG_CONFIG_neotericVarsPlugin :=
 
 define addVar
-  SOONG_CONFIG_zephyrusVarsPlugin += $(1)
-  SOONG_CONFIG_zephyrusVarsPlugin_$(1) := $$(subst ",\",$$($1))
+  SOONG_CONFIG_neotericVarsPlugin += $(1)
+  SOONG_CONFIG_neotericVarsPlugin_$(1) := $$(subst ",\",$$($1))
 endef
 
 $(foreach v,$(EXPORT_TO_SOONG),$(eval $(call addVar,$(v))))
 
-SOONG_CONFIG_NAMESPACES += zephyrusGlobalVars
-SOONG_CONFIG_zephyrusGlobalVars += \
+SOONG_CONFIG_NAMESPACES += neotericGlobalVars
+SOONG_CONFIG_neotericGlobalVars += \
     needs_camera_boottime \
     target_health_charging_control_charging_path \
     target_health_charging_control_charging_enabled \
@@ -50,32 +50,32 @@ TARGET_INIT_VENDOR_LIB ?= vendor_init
 TARGET_SURFACEFLINGER_UDFPS_LIB ?= surfaceflinger_udfps_lib
 
 # Soong value variables
-SOONG_CONFIG_zephyrusGlobalVars_needs_camera_boottime := $(TARGET_CAMERA_BOOTTIME_TIMESTAMP)
-SOONG_CONFIG_zephyrusGlobalVars_target_init_vendor_lib := $(TARGET_INIT_VENDOR_LIB)
-SOONG_CONFIG_zephyrusGlobalVars_target_ld_shim_libs := $(subst $(space),:,$(TARGET_LD_SHIM_LIBS))
-SOONG_CONFIG_zephyrusGlobalVars_uses_oplus_camera := $(TARGET_USES_OPLUS_CAMERA)
-SOONG_CONFIG_zephyrusGlobalVars_target_health_charging_control_charging_path := $(TARGET_HEALTH_CHARGING_CONTROL_CHARGING_PATH)
-SOONG_CONFIG_zephyrusGlobalVars_target_health_charging_control_charging_enabled := $(TARGET_HEALTH_CHARGING_CONTROL_CHARGING_ENABLED)
-SOONG_CONFIG_zephyrusGlobalVars_target_health_charging_control_charging_disabled := $(TARGET_HEALTH_CHARGING_CONTROL_CHARGING_DISABLED)
-SOONG_CONFIG_zephyrusGlobalVars_target_health_charging_control_deadline_path := $(TARGET_HEALTH_CHARGING_CONTROL_DEADLINE_PATH)
-SOONG_CONFIG_zephyrusGlobalVars_target_health_charging_control_supports_bypass := $(TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS)
-SOONG_CONFIG_zephyrusGlobalVars_target_health_charging_control_supports_deadline := $(TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_DEADLINE)
-SOONG_CONFIG_zephyrusGlobalVars_target_health_charging_control_supports_toggle := $(TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_TOGGLE)
-SOONG_CONFIG_zephyrusGlobalVars_target_process_sdk_version_override := $(TARGET_PROCESS_SDK_VERSION_OVERRIDE)
-SOONG_CONFIG_zephyrusGlobalVars_target_surfaceflinger_udfps_lib := $(TARGET_SURFACEFLINGER_UDFPS_LIB)
-SOONG_CONFIG_zephyrusGlobalVars_uses_nothing_camera := $(TARGET_USES_NOTHING_CAMERA)
+SOONG_CONFIG_neotericGlobalVars_needs_camera_boottime := $(TARGET_CAMERA_BOOTTIME_TIMESTAMP)
+SOONG_CONFIG_neotericGlobalVars_target_init_vendor_lib := $(TARGET_INIT_VENDOR_LIB)
+SOONG_CONFIG_neotericGlobalVars_target_ld_shim_libs := $(subst $(space),:,$(TARGET_LD_SHIM_LIBS))
+SOONG_CONFIG_neotericGlobalVars_uses_oplus_camera := $(TARGET_USES_OPLUS_CAMERA)
+SOONG_CONFIG_neotericGlobalVars_target_health_charging_control_charging_path := $(TARGET_HEALTH_CHARGING_CONTROL_CHARGING_PATH)
+SOONG_CONFIG_neotericGlobalVars_target_health_charging_control_charging_enabled := $(TARGET_HEALTH_CHARGING_CONTROL_CHARGING_ENABLED)
+SOONG_CONFIG_neotericGlobalVars_target_health_charging_control_charging_disabled := $(TARGET_HEALTH_CHARGING_CONTROL_CHARGING_DISABLED)
+SOONG_CONFIG_neotericGlobalVars_target_health_charging_control_deadline_path := $(TARGET_HEALTH_CHARGING_CONTROL_DEADLINE_PATH)
+SOONG_CONFIG_neotericGlobalVars_target_health_charging_control_supports_bypass := $(TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS)
+SOONG_CONFIG_neotericGlobalVars_target_health_charging_control_supports_deadline := $(TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_DEADLINE)
+SOONG_CONFIG_neotericGlobalVars_target_health_charging_control_supports_toggle := $(TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_TOGGLE)
+SOONG_CONFIG_neotericGlobalVars_target_process_sdk_version_override := $(TARGET_PROCESS_SDK_VERSION_OVERRIDE)
+SOONG_CONFIG_neotericGlobalVars_target_surfaceflinger_udfps_lib := $(TARGET_SURFACEFLINGER_UDFPS_LIB)
+SOONG_CONFIG_neotericGlobalVars_uses_nothing_camera := $(TARGET_USES_NOTHING_CAMERA)
 
 # Gestures
 define add-gesturevar-if-exist
 $(eval vn := $(shell echo $(1) | tr '[:upper:]' '[:lower:]'))
 $(if $($(1)), \
-  $(eval SOONG_CONFIG_zephyrusGestureVars += $(vn)) \
-  $(eval SOONG_CONFIG_zephyrusGestureVars_$(vn) := $(patsubst "%",%,$($(1)))) \
+  $(eval SOONG_CONFIG_neotericGestureVars += $(vn)) \
+  $(eval SOONG_CONFIG_neotericGestureVars_$(vn) := $(patsubst "%",%,$($(1)))) \
 )
 endef
 
-SOONG_CONFIG_NAMESPACES += zephyrusGestureVars
-SOONG_CONFIG_zephyrusGestureVars :=
+SOONG_CONFIG_NAMESPACES += neotericGestureVars
+SOONG_CONFIG_neotericGestureVars :=
 GESTURE_SOONG_VARS := \
     TARGET_GESTURES_NODE \
     TARGET_TAP_TO_WAKE_NODE \

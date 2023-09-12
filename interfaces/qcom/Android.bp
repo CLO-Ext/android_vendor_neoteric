@@ -14,25 +14,25 @@
 
 hidl_package_root {
     name: "com.qualcomm.qti.bluetooth_audio",
-    path: "vendor/zephyrus/interfaces/qcom/bluetooth_audio",
+    path: "vendor/neoteric/interfaces/qcom/bluetooth_audio",
 }
 
 hidl_package_root {
     name: "vendor.qti.hardware.btconfigstore",
-    path: "vendor/zephyrus/interfaces/qcom/btconfigstore",
+    path: "vendor/neoteric/interfaces/qcom/btconfigstore",
 }
 
 hidl_package_root {
     name: "vendor.qti.hardware.capabilityconfigstore",
-    path: "vendor/zephyrus/interfaces/qcom/capabilityconfigstore",
+    path: "vendor/neoteric/interfaces/qcom/capabilityconfigstore",
 }
 
 hidl_package_root {
     name: "vendor.qti.hardware.cryptfshw",
-    path: "vendor/zephyrus/interfaces/qcom/cryptfshw",
+    path: "vendor/neoteric/interfaces/qcom/cryptfshw",
 }
 
 hidl_package_root {
     name: "vendor.qti.hardware.fm",
-    path: "vendor/zephyrus/interfaces/qcom/fm",
+    path: "vendor/neoteric/interfaces/qcom/fm",
 }

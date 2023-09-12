@@ -1,17 +1,17 @@
-ZEPHYRUS_DATE_YEAR := $(shell date -u +%Y)
-ZEPHYRUS_DATE_MONTH := $(shell date -u +%m)
-ZEPHYRUS_DATE_DAY := $(shell date -u +%d)
-ZEPHYRUS_DATE_HOUR := $(shell date -u +%H)
-ZEPHYRUS_DATE_MINUTE := $(shell date -u +%M)
-ZEPHYRUS_BUILD_DATE := $(ZEPHYRUS_DATE_YEAR)$(ZEPHYRUS_DATE_MONTH)$(ZEPHYRUS_DATE_DAY)-$(ZEPHYRUS_DATE_HOUR)$(ZEPHYRUS_DATE_MINUTE)
+NEOTERIC_DATE_YEAR := $(shell date -u +%Y)
+NEOTERIC_DATE_MONTH := $(shell date -u +%m)
+NEOTERIC_DATE_DAY := $(shell date -u +%d)
+NEOTERIC_DATE_HOUR := $(shell date -u +%H)
+NEOTERIC_DATE_MINUTE := $(shell date -u +%M)
+NEOTERIC_BUILD_DATE := $(NEOTERIC_DATE_YEAR)$(NEOTERIC_DATE_MONTH)$(NEOTERIC_DATE_DAY)-$(NEOTERIC_DATE_HOUR)$(NEOTERIC_DATE_MINUTE)
 
-ZEPHYRUS_TARGET_PACKAGE := $(PRODUCT_OUT)/project-zephyrus-CLO_$(TARGET_DEVICE)-$(CUSTOM_ROM_VERSION)-$(ZEPHYRUS_BUILD_DATE).zip
+NEOTERIC_TARGET_PACKAGE := $(PRODUCT_OUT)/Neoteric-OS_$(TARGET_DEVICE)-$(CUSTOM_ROM_VERSION)-$(NEOTERIC_BUILD_DATE).zip
 
 SHA256 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/sha256sum
 
 .PHONY: bacon
 bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
-	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(ZEPHYRUS_TARGET_PACKAGE)
-	$(hide) $(SHA256) $(ZEPHYRUS_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(ZEPHYRUS_TARGET_PACKAGE).sha256sum
-	$(hide) ./vendor/zephyrus/tools/generate_json_build_info.sh $(ZEPHYRUS_TARGET_PACKAGE)
-	@echo "Package Complete: $(ZEPHYRUS_TARGET_PACKAGE)" >&2
+	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(NEOTERIC_TARGET_PACKAGE)
+	$(hide) $(SHA256) $(NEOTERIC_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(NEOTERIC_TARGET_PACKAGE).sha256sum
+	$(hide) ./vendor/neoteric/tools/generate_json_build_info.sh $(NEOTERIC_TARGET_PACKAGE)
+	@echo "Package Complete: $(NEOTERIC_TARGET_PACKAGE)" >&2

@@ -14,4 +14,4 @@
 
 # Pixel APNs
 PRODUCT_COPY_FILES += \
-    vendor/zephyrus/telephony/apns-full-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml
+    vendor/neoteric/telephony/apns-full-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml

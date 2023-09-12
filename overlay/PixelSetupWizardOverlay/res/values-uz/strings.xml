@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="bc_welcome_message">Project Zephyrusni kutib oling</string>
-    <string name="deferred_setup_wizard_title">Project Zephyrus qurilmasini sozlashni yakunlang</string>
-    <string name="device_name">Project Zephyrus</string>
-    <string name="setup_wizard_title">Project Zephyrus qurilmasini sozlash</string>
+    <string name="bc_welcome_message">Neoteric OSni kutib oling</string>
+    <string name="deferred_setup_wizard_title">Neoteric OS qurilmasini sozlashni yakunlang</string>
+    <string name="device_name">Neoteric OS</string>
+    <string name="setup_wizard_title">Neoteric OS qurilmasini sozlash</string>
 </resources>

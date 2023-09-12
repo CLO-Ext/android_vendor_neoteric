@@ -9,7 +9,7 @@ then
     OUT=${FILE%/*}
     DEVICE=${OUT##*/}
 
-    DATE=$(grep ro\.zeph\.date\.utc ./out/target/product/$DEVICE/system/build.prop | cut -d= -f2);
+    DATE=$(grep ro\.neoteric\.date\.utc ./out/target/product/$DEVICE/system/build.prop | cut -d= -f2);
     DATE_S=`date "+%Y_%m_%d" -d @$DATE`
 
     JSON_DEVICE_DIR=ota/$DEVICE
@@ -21,7 +21,7 @@ then
         mkdir -p $JSON_DEVICE_DIR
     fi
 
-    VERSION=`grep ro.zeph.version $OUT/system/build.prop | sed "s/ro.zeph.version=//"`
+    VERSION=`grep ro.neoteric.version $OUT/system/build.prop | sed "s/ro.neoteric.version=//"`
 
     # Generate ota json
     :> $JSON

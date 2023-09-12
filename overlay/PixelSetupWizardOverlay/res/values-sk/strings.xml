@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="bc_welcome_message">Vítá vás Project Zephyrus</string>
-    <string name="deferred_setup_wizard_title">Dokončite nastavenie Project Zephyrusa</string>
-    <string name="device_name">Project Zephyrus</string>
-    <string name="setup_wizard_title">Nastavenie telefónu Project Zephyrus</string>
+    <string name="bc_welcome_message">Vítá vás Neoteric OS</string>
+    <string name="deferred_setup_wizard_title">Dokončite nastavenie Neoteric OSa</string>
+    <string name="device_name">Neoteric OS</string>
+    <string name="setup_wizard_title">Nastavenie telefónu Neoteric OS</string>
 </resources>

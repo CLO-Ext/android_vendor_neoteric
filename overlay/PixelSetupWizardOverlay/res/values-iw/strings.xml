@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="bc_welcome_message">‏ברכות על ה-Project Zephyrus שלך</string>
-    <string name="deferred_setup_wizard_title">‏לא סיימת להגדיר את Project Zephyrus</string>
-    <string name="device_name">Project Zephyrus</string>
-    <string name="setup_wizard_title">‏הגדרת Project Zephyrus</string>
+    <string name="bc_welcome_message">‏ברכות על ה-Neoteric OS שלך</string>
+    <string name="deferred_setup_wizard_title">‏לא סיימת להגדיר את Neoteric OS</string>
+    <string name="device_name">Neoteric OS</string>
+    <string name="setup_wizard_title">‏הגדרת Neoteric OS</string>
 </resources>

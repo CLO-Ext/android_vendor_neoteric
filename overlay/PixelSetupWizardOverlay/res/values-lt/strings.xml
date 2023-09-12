@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="bc_welcome_message">Sveiki! Tai – „Project Zephyrus“</string>
-    <string name="deferred_setup_wizard_title">Užbaikite „Project Zephyrus“ sąranką</string>
-    <string name="device_name">Project Zephyrus</string>
-    <string name="setup_wizard_title">„Project Zephyrus“ sąranka</string>
+    <string name="bc_welcome_message">Sveiki! Tai – „Neoteric OS“</string>
+    <string name="deferred_setup_wizard_title">Užbaikite „Neoteric OS“ sąranką</string>
+    <string name="device_name">Neoteric OS</string>
+    <string name="setup_wizard_title">„Neoteric OS“ sąranka</string>
 </resources>

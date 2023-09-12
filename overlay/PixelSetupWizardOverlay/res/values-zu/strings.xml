@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="bc_welcome_message">Siyakwamukela kwi-Project Zephyrus yakho</string>
-    <string name="deferred_setup_wizard_title">Qedelela ukusetha i-Project Zephyrus</string>
-    <string name="device_name">Project Zephyrus</string>
+    <string name="bc_welcome_message">Siyakwamukela kwi-Neoteric OS yakho</string>
+    <string name="deferred_setup_wizard_title">Qedelela ukusetha i-Neoteric OS</string>
+    <string name="device_name">Neoteric OS</string>
     <string name="setup_wizard_title">Ukusetha iphikseli</string>
 </resources>

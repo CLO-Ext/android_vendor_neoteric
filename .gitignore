@@ -1,5 +1,5 @@
-# ZEPHYRUS app_overrides
+# NEOTERIC app_overrides
 apps/*
 
-# ZEPHYRUS Prebuilts
+# NEOTERIC Prebuilts
 prebuilt/

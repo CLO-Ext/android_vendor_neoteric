@@ -16,7 +16,7 @@
  */
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-        package="com.zeph.overlay.systemui.navbar_ime.narrow"
+        package="com.neoteric.overlay.systemui.navbar_ime.narrow"
         android:versionCode="1"
         android:versionName="1.0">
     <overlay android:targetPackage="android"

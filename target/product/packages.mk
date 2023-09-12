@@ -46,11 +46,11 @@ PRODUCT_PACKAGES += \
 
 # Common Overlay
 DEVICE_PACKAGE_OVERLAYS += \
-    vendor/zephyrus/overlay-gapps/common
+    vendor/neoteric/overlay-gapps/common
 
 # Exclude RRO Enforcement
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS +=  \
-    vendor/zephyrus/overlay-gapps/common   
+    vendor/neoteric/overlay-gapps/common   
 
 # Repainter (kdrag0n)
 PRODUCT_PACKAGES += \
