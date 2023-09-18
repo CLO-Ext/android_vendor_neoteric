@@ -6,6 +6,7 @@
       <item>lahaina</item>
       <item>oneplus9</item>
       <item>oneplus9pro</item>
+      <item>panther</item>
    </string-array>
 
    <string-array name="config_maintainer_name_list" translatable="false">
@@ -14,6 +15,7 @@
       <item>Sherif Rahim</item>
       <item>Sherif Rahim</item>
       <item>Sherif Rahim</item>
+      <item>Prochy/Dominik</item>
    </string-array>
 
    <string-array name="config_maintainer_link_list" translatable="false">
@@ -22,6 +24,7 @@
       <item>https://t.me/sherifrahim</item>
       <item>https://t.me/sherifrahim</item>
       <item>https://t.me/sherifrahim</item>
+      <item>https://t.me/dompro0209</item>
    </string-array>
 
    <string-array name="config_group_list" translatable="false">
@@ -30,6 +33,7 @@
       <item>https://t.me/area51lemonade</item>
       <item>https://t.me/area51lemonade</item>
       <item>https://t.me/area51lemonade</item>
+      <item>https://t.me/NeotericOSPixel7</item>
    </string-array>
    
 </resources>
