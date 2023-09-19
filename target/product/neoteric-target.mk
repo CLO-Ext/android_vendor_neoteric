@@ -122,6 +122,11 @@ endif
 PRODUCT_COPY_FILES += \
     vendor/neoteric/target/config/permissions/org.lineageos.health.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/org.lineageos.health.xml
     
+# Pixel Settings and SystemUI
+PRODUCT_PACKAGES += \
+    SystemUIGoogle \
+    SettingsGoogle
+
 # Lineage health
 TARGET_HEALTH_CHARGING_CONTROL_CHARGING_ENABLED ?= 1
 TARGET_HEALTH_CHARGING_CONTROL_CHARGING_DISABLED ?= 0
