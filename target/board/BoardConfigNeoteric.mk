@@ -22,6 +22,9 @@ include device/qcom/common/BoardConfigQcom.mk
 include device/neoteric/sepolicy/qcom/sepolicy.mk
 endif
 
+# Include our common sepolicy
+include device/neoteric/sepolicy/common/sepolicy.mk
+
 # Kernel configuration.
 include vendor/neoteric/target/board/BoardConfigKernel.mk
 
