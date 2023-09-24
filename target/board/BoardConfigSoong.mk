@@ -106,6 +106,15 @@ SOONG_CONFIG_aosp_vs_qva_aosp_or_qva := qva
 SOONG_CONFIG_NAMESPACES += bredr_vs_btadva
 SOONG_CONFIG_bredr_vs_btadva += bredr_or_btadva
 
+ifeq ($(call is-board-platform-in-list,$(QCOM_BOARD_PLATFORMS)),true)
+SOONG_CONFIG_NAMESPACES += neotericQcomVars
+
+SOONG_CONFIG_neotericQcomVars += \
+    qcom_display_headers_namespace
+
+SOONG_CONFIG_neotericQcomVars_qcom_display_headers_namespace := vendor/qcom/opensource/commonsys-intf/display
+endif
+
 ifneq "$(wildcard vendor/qcom/proprietary/commonsys/bt/bt_adv_audio)" ""
     $(warning bt_adv_audio dir is present)
     SOONG_CONFIG_bredr_vs_btadva_bredr_or_btadva := btadva
