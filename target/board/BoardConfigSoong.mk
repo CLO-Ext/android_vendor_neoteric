@@ -30,6 +30,7 @@ $(foreach v,$(EXPORT_TO_SOONG),$(eval $(call addVar,$(v))))
 
 SOONG_CONFIG_NAMESPACES += neotericGlobalVars
 SOONG_CONFIG_neotericGlobalVars += \
+    additional_gralloc_10_usage_bits \
     needs_camera_boottime \
     target_health_charging_control_charging_path \
     target_health_charging_control_charging_enabled \
@@ -46,10 +47,12 @@ SOONG_CONFIG_neotericGlobalVars += \
     uses_nothing_camera
 
 # Set default values
+TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS ?= 0
 TARGET_INIT_VENDOR_LIB ?= vendor_init
 TARGET_SURFACEFLINGER_UDFPS_LIB ?= surfaceflinger_udfps_lib
 
 # Soong value variables
+SOONG_CONFIG_neotericGlobalVars_additional_gralloc_10_usage_bits := $(TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS)
 SOONG_CONFIG_neotericGlobalVars_needs_camera_boottime := $(TARGET_CAMERA_BOOTTIME_TIMESTAMP)
 SOONG_CONFIG_neotericGlobalVars_target_init_vendor_lib := $(TARGET_INIT_VENDOR_LIB)
 SOONG_CONFIG_neotericGlobalVars_target_ld_shim_libs := $(subst $(space),:,$(TARGET_LD_SHIM_LIBS))
@@ -105,6 +108,15 @@ SOONG_CONFIG_aosp_vs_qva_aosp_or_qva := qva
 
 SOONG_CONFIG_NAMESPACES += bredr_vs_btadva
 SOONG_CONFIG_bredr_vs_btadva += bredr_or_btadva
+
+ifeq ($(call is-board-platform-in-list,$(QCOM_BOARD_PLATFORMS)),true)
+SOONG_CONFIG_NAMESPACES += neotericQcomVars
+
+SOONG_CONFIG_neotericQcomVars += \
+    qcom_display_headers_namespace
+
+SOONG_CONFIG_neotericQcomVars_qcom_display_headers_namespace := vendor/qcom/opensource/commonsys-intf/display
+endif
 
 ifneq "$(wildcard vendor/qcom/proprietary/commonsys/bt/bt_adv_audio)" ""
     $(warning bt_adv_audio dir is present)
