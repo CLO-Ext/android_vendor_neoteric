@@ -46,8 +46,16 @@
         <item>systemui/enable_screenshot_scrolling=true</item>
 
         <!-- Notifications -->
-        <item>notification_assistant/generate_actions=true</item>
-        <item>notification_assistant/generate_replies=true</item>
+        <item>systemui/nas_generate_actions=true</item>
+        <item>systemui/nas_generate_replies=true</item>
+
+        <!-- Notification Assistant (DPS) -->
+        <item>device_personalization_services/NotificationAssistant__enable_service=true</item>
+        <item>device_personalization_services/NotificationAssistant__enable_upgrade_importance=true</item>
+        <item>device_personalization_services/NotificationAssistant__importance_model_download_url=https://www.gstatic.com/android/notifications/importance/v1/manifest.json</item>
+        <item>device_personalization_services/NotificationAssistant__importance_model_type=channel_stats</item>
+        <item>device_personalization_services/NotificationAssistant__importance_model_version=1</item>
+        <item>device_personalization_services/NotificationAssistant__max_importance_variance=0.5</item>
 
         <!--
             Device Personalization Services (AiAi)
