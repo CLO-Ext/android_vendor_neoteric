@@ -10,12 +10,12 @@
    </string-array>
 
    <string-array name="config_maintainer_name_list" translatable="false">
-      <item>HELLBOY017</item>
+      <item>HELLBOY017|Dominik</item>
       <item>Yoriscape</item>
       <item>Sherif Rahim</item>
       <item>Sherif Rahim</item>
       <item>Sherif Rahim</item>
-      <item>Prochy/Dominik</item>
+      <item>Dominik</item>
    </string-array>
 
    <string-array name="config_maintainer_link_list" translatable="false">
