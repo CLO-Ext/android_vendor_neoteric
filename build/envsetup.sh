@@ -1,18 +1,13 @@
 function __print_neoteric_functions_help() {
 cat <<EOF
-Additional Paranoid Android functions:
-- clomerge:        Utility to merge CLO tags.
-- repopick:        Utility to fetch changes from Gerrit.
-- sort-blobs-list: Sort proprietary-files.txt sections with LC_ALL=C.
+Additional Neoteric OS functions:
+- mergeclo: Merge in a newer caf tag across the source
+              usage: mergeclo --system-tag <clo tag> --vendor-tag <clo tag>
 EOF
 }
 
-function clomerge()
-{
-    target_branch=$1
-    set_stuff_for_environment
-    T=$(gettop)
-    python3 $T/vendor/neoteric/build/tools/merge-clo.py $target_branch
+function mergeclo() {
+    ./vendor/neoteric/scripts/manifest_merger/target/release/manifest_merger $*
 }
 
 export SKIP_ABI_CHECKS="true"
