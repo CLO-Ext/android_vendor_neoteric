@@ -24,12 +24,6 @@ function clomerge()
     python3 $T/vendor/aospa/build/tools/merge-clo.py $target_branch
 }
 
-function repopick()
-{
-    T=$(gettop)
-    $T/vendor/aospa/build/tools/repopick.py $@
-}
-
 function sort-blobs-list() {
     T=$(gettop)
     $T/tools/extract-utils/sort-blobs-list.py $@
