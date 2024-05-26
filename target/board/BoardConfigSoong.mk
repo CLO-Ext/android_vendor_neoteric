@@ -42,6 +42,7 @@ SOONG_CONFIG_neotericGlobalVars += \
     target_health_charging_control_supports_toggle \
     target_init_vendor_lib \
     target_ld_shim_libs \
+    target_libcameraservice_ext_lib \
     target_process_sdk_version_override \
     target_surfaceflinger_udfps_lib
 
@@ -58,6 +59,7 @@ TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_DEADLINE ?= false
 TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_TOGGLE ?= true
 TARGET_INIT_VENDOR_LIB ?= vendor_init
 TARGET_SURFACEFLINGER_UDFPS_LIB ?= surfaceflinger_udfps_lib
+TARGET_CAMERA_SERVICE_EXT_LIB ?= libcameraservice_ext_lib
 
 # Soong value variables
 SOONG_CONFIG_neotericGlobalVars_aapt_version_code := $(shell date -u +%Y%m%d)
@@ -77,6 +79,7 @@ SOONG_CONFIG_neotericGlobalVars_target_health_charging_control_deadline_path := 
 SOONG_CONFIG_neotericGlobalVars_target_health_charging_control_supports_bypass := $(TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS)
 SOONG_CONFIG_neotericGlobalVars_target_health_charging_control_supports_deadline := $(TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_DEADLINE)
 SOONG_CONFIG_neotericGlobalVars_target_health_charging_control_supports_toggle := $(TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_TOGGLE)
+SOONG_CONFIG_neotericGlobalVars_target_libcameraservice_ext_lib := $(TARGET_CAMERA_SERVICE_EXT_LIB)
 
 # Qualcomm variables
 SOONG_CONFIG_NAMESPACES += aosp_vs_qva
