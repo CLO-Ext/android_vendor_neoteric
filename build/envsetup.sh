@@ -54,3 +54,7 @@ if [ $(ls ${ANDROID_BUILD_TOP}/certs 2>/dev/null | wc -l ) -eq 0 ]; then
         ./development/tools/make_key "$certs_dir"/$key "$subject"
     done
 fi
+
+export FILE_NAME_TAG=eng.nobody
+export BUILD_USERNAME=nobody
+export BUILD_HOSTNAME=android-build
