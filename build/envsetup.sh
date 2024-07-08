@@ -9,6 +9,7 @@ EOF
 }
 
 red='\033[0;31m'
+cyan='\033[0;36m'
 nocol='\033[0m'
 
 function clodiff()
@@ -42,7 +43,9 @@ if [ $(ls ${ANDROID_BUILD_TOP}/certs 2>/dev/null | wc -l ) -eq 0 ]; then
     mkdir -p "$certs_dir"
     subject=""
     echo "Sample subject: '/C=US/ST=California/L=Mountain View/O=Android/OU=Android/CN=Android/emailAddress=android@android.com'"
-    echo "$red C should only have 2 characters for ex:- C=IN not C=IND $nocol"
+    echo -e "$cyan***********************************************************" 
+    echo    "  C should only have 2 characters for ex:- C=IN not C=IND"
+    echo -e "***********************************************************$nocol"
     echo "Now enter subject details for your keys:"
     for entry in C ST L O OU CN emailAddress; do
         echo -n "$entry:"
