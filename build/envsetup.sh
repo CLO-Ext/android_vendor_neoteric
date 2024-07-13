@@ -1,7 +1,7 @@
-function __print_aospa_functions_help() {
+function __print_neoteric_functions_help() {
 cat <<EOF
 Additional Paranoid Android functions:
-- clodiff:         Utility to diff CLO history to AOSPA.
+- clodiff:         Utility to diff CLO history to Neoteric.
 - clomerge:        Utility to merge CLO tags.
 - repopick:        Utility to fetch changes from Gerrit.
 - sort-blobs-list: Sort proprietary-files.txt sections with LC_ALL=C.
@@ -17,7 +17,7 @@ function clodiff()
     target_branch=$1
     set_stuff_for_environment
     T=$(gettop)
-    python3 $T/vendor/aospa/build/tools/diff-clo.py $target_branch
+    python3 $T/vendor/neoteric/build/tools/diff-clo.py $target_branch
 }
 
 function clomerge()
@@ -25,7 +25,7 @@ function clomerge()
     target_branch=$1
     set_stuff_for_environment
     T=$(gettop)
-    python3 $T/vendor/aospa/build/tools/merge-clo.py $target_branch
+    python3 $T/vendor/neoteric/build/tools/merge-clo.py $target_branch
 }
 
 function sort-blobs-list() {

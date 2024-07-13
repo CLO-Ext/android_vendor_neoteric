@@ -28,7 +28,7 @@ import (
 )
 
 func init() {
-	android.RegisterModuleType("aospa_generator", GeneratorFactory)
+	android.RegisterModuleType("neoteric_generator", GeneratorFactory)
 }
 
 var String = proptools.String
@@ -210,12 +210,12 @@ func (g *Module) GenerateAndroidBuildActions(ctx android.ModuleContext) {
 	if depRoot == "" {
 		depRoot = ctx.ModuleDir()
 	} else {
-		depRoot = aospaExpandVariables(ctx, depRoot)
+		depRoot = neotericExpandVariables(ctx, depRoot)
 	}
 
 	// Glob dep_files property
 	for _, dep_file := range g.properties.Dep_files {
-		dep_file = aospaExpandVariables(ctx, dep_file)
+		dep_file = neotericExpandVariables(ctx, dep_file)
 		globPath := filepath.Join(depRoot, dep_file)
 		paths, err := ctx.GlobWithDeps(globPath, nil)
 		if err != nil {
@@ -227,7 +227,7 @@ func (g *Module) GenerateAndroidBuildActions(ctx android.ModuleContext) {
 		}
 	}
 
-	cmd := aospaExpandVariables(ctx, String(g.properties.Cmd))
+	cmd := neotericExpandVariables(ctx, String(g.properties.Cmd))
 
 	rawCommand, err := android.Expand(cmd, func(name string) (string, error) {
 		switch name {

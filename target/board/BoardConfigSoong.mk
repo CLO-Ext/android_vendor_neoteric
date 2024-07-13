@@ -17,19 +17,19 @@ EXPORT_TO_SOONG := \
     TARGET_KERNEL_CONFIG \
     TARGET_KERNEL_SOURCE
 
-SOONG_CONFIG_NAMESPACES += aospaVarsPlugin
+SOONG_CONFIG_NAMESPACES += neotericVarsPlugin
 
-SOONG_CONFIG_aospaVarsPlugin :=
+SOONG_CONFIG_neotericVarsPlugin :=
 
 define addVar
-  SOONG_CONFIG_aospaVarsPlugin += $(1)
-  SOONG_CONFIG_aospaVarsPlugin_$(1) := $($1)
+  SOONG_CONFIG_neotericVarsPlugin += $(1)
+  SOONG_CONFIG_neotericVarsPlugin_$(1) := $($1)
 endef
 
 $(foreach v,$(EXPORT_TO_SOONG),$(eval $(call addVar,$(v))))
 
-SOONG_CONFIG_NAMESPACES += aospaGlobalVars
-SOONG_CONFIG_aospaGlobalVars += \
+SOONG_CONFIG_NAMESPACES += neotericGlobalVars
+SOONG_CONFIG_neotericGlobalVars += \
     needs_camera_boottime \
     powershare_node \
     target_camera_package_name \
@@ -55,32 +55,32 @@ TARGET_INIT_VENDOR_LIB ?= vendor_init
 TARGET_SURFACEFLINGER_UDFPS_LIB ?= surfaceflinger_udfps_lib
 
 # Soong value variables
-SOONG_CONFIG_aospaGlobalVars_needs_camera_boottime := $(TARGET_CAMERA_BOOTTIME_TIMESTAMP)
-SOONG_CONFIG_aospaGlobalVars_powershare_node := $(TARGET_POWERSHARE_NODE)
-SOONG_CONFIG_aospaGlobalVars_target_camera_package_name := $(TARGET_CAMERA_PACKAGE_NAME)
-SOONG_CONFIG_aospaGlobalVars_target_init_vendor_lib := $(TARGET_INIT_VENDOR_LIB)
-SOONG_CONFIG_aospaGlobalVars_target_ld_shim_libs := $(subst $(space),:,$(TARGET_LD_SHIM_LIBS))
-SOONG_CONFIG_aospaGlobalVars_target_process_sdk_version_override := $(TARGET_PROCESS_SDK_VERSION_OVERRIDE)
-SOONG_CONFIG_aospaGlobalVars_target_surfaceflinger_udfps_lib := $(TARGET_SURFACEFLINGER_UDFPS_LIB)
-SOONG_CONFIG_aospaGlobalVars_target_health_charging_control_charging_path := $(TARGET_HEALTH_CHARGING_CONTROL_CHARGING_PATH)
-SOONG_CONFIG_aospaGlobalVars_target_health_charging_control_charging_enabled := $(TARGET_HEALTH_CHARGING_CONTROL_CHARGING_ENABLED)
-SOONG_CONFIG_aospaGlobalVars_target_health_charging_control_charging_disabled := $(TARGET_HEALTH_CHARGING_CONTROL_CHARGING_DISABLED)
-SOONG_CONFIG_aospaGlobalVars_target_health_charging_control_deadline_path := $(TARGET_HEALTH_CHARGING_CONTROL_DEADLINE_PATH)
-SOONG_CONFIG_aospaGlobalVars_target_health_charging_control_supports_bypass := $(TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS)
-SOONG_CONFIG_aospaGlobalVars_target_health_charging_control_supports_deadline := $(TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_DEADLINE)
-SOONG_CONFIG_aospaGlobalVars_target_health_charging_control_supports_toggle := $(TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_TOGGLE)
+SOONG_CONFIG_neotericGlobalVars_needs_camera_boottime := $(TARGET_CAMERA_BOOTTIME_TIMESTAMP)
+SOONG_CONFIG_neotericGlobalVars_powershare_node := $(TARGET_POWERSHARE_NODE)
+SOONG_CONFIG_neotericGlobalVars_target_camera_package_name := $(TARGET_CAMERA_PACKAGE_NAME)
+SOONG_CONFIG_neotericGlobalVars_target_init_vendor_lib := $(TARGET_INIT_VENDOR_LIB)
+SOONG_CONFIG_neotericGlobalVars_target_ld_shim_libs := $(subst $(space),:,$(TARGET_LD_SHIM_LIBS))
+SOONG_CONFIG_neotericGlobalVars_target_process_sdk_version_override := $(TARGET_PROCESS_SDK_VERSION_OVERRIDE)
+SOONG_CONFIG_neotericGlobalVars_target_surfaceflinger_udfps_lib := $(TARGET_SURFACEFLINGER_UDFPS_LIB)
+SOONG_CONFIG_neotericGlobalVars_target_health_charging_control_charging_path := $(TARGET_HEALTH_CHARGING_CONTROL_CHARGING_PATH)
+SOONG_CONFIG_neotericGlobalVars_target_health_charging_control_charging_enabled := $(TARGET_HEALTH_CHARGING_CONTROL_CHARGING_ENABLED)
+SOONG_CONFIG_neotericGlobalVars_target_health_charging_control_charging_disabled := $(TARGET_HEALTH_CHARGING_CONTROL_CHARGING_DISABLED)
+SOONG_CONFIG_neotericGlobalVars_target_health_charging_control_deadline_path := $(TARGET_HEALTH_CHARGING_CONTROL_DEADLINE_PATH)
+SOONG_CONFIG_neotericGlobalVars_target_health_charging_control_supports_bypass := $(TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS)
+SOONG_CONFIG_neotericGlobalVars_target_health_charging_control_supports_deadline := $(TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_DEADLINE)
+SOONG_CONFIG_neotericGlobalVars_target_health_charging_control_supports_toggle := $(TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_TOGGLE)
 
 # Gestures
 define add-gesturevar-if-exist
 $(eval vn := $(shell echo $(1) | tr '[:upper:]' '[:lower:]'))
 $(if $($(1)), \
-  $(eval SOONG_CONFIG_aospaGestureVars += $(vn)) \
-  $(eval SOONG_CONFIG_aospaGestureVars_$(vn) := $(patsubst "%",%,$($(1)))) \
+  $(eval SOONG_CONFIG_neotericGestureVars += $(vn)) \
+  $(eval SOONG_CONFIG_neotericGestureVars_$(vn) := $(patsubst "%",%,$($(1)))) \
 )
 endef
 
-SOONG_CONFIG_NAMESPACES += aospaGestureVars
-SOONG_CONFIG_aospaGestureVars :=
+SOONG_CONFIG_NAMESPACES += neotericGestureVars
+SOONG_CONFIG_neotericGestureVars :=
 GESTURE_SOONG_VARS := \
     TARGET_GESTURES_NODE \
     TARGET_TAP_TO_WAKE_NODE \

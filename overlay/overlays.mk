@@ -14,14 +14,14 @@
 
 # Overlays
 PRODUCT_PACKAGES += \
-    AOSPABlackThemeOverlay \
-    AOSPAFrameworksOverlay \
-    AOSPAImmersiveNavigationOverlay \
-    AOSPANetworkStackOverlay \
-    AOSPANetworkStackMainlineOverlay \
-    AOSPASettingsOverlay \
-    AOSPASettingsProviderOverlay \
-    AOSPASystemUIOverlay \
+    NeotericBlackThemeOverlay \
+    NeotericFrameworksOverlay \
+    NeotericImmersiveNavigationOverlay \
+    NeotericNetworkStackOverlay \
+    NeotericNetworkStackMainlineOverlay \
+    NeotericSettingsOverlay \
+    NeotericSettingsProviderOverlay \
+    NeotericSystemUIOverlay \
     CertifiedPropsOverlay \
     FontGoogleSansOverlay \
     FontHarmonySansOverlay \
@@ -68,10 +68,10 @@ PRODUCT_PACKAGES += \
     IconShapeTaperedRectOverlay \
     IconShapeTeardropOverlay \
     IconShapeVesselOverlay \
-    ParanoidLauncherOverlay
+    NeotericLauncherOverlay
 
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/aospa/overlay/static
-PRODUCT_PACKAGE_OVERLAYS += vendor/aospa/overlay/static
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/neoteric/overlay/static
+PRODUCT_PACKAGE_OVERLAYS += vendor/neoteric/overlay/static
 
 PRODUCT_COPY_FILES += \
-    vendor/aospa/overlay/partition_order.xml:$(TARGET_COPY_OUT_PRODUCT)/overlay/partition_order.xml
+    vendor/neoteric/overlay/partition_order.xml:$(TARGET_COPY_OUT_PRODUCT)/overlay/partition_order.xml

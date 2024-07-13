@@ -13,10 +13,10 @@
 # limitations under the License.
 
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
-    vendor/aospa/sepolicy/private
+    vendor/neoteric/sepolicy/private
 
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += \
-    vendor/aospa/sepolicy/public
+    vendor/neoteric/sepolicy/public
 
 BOARD_VENDOR_SEPOLICY_DIRS += \
-    vendor/aospa/sepolicy/vendor
+    vendor/neoteric/sepolicy/vendor

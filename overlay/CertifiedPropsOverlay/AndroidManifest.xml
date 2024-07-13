@@ -4,7 +4,7 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="co.aospa.android.certifiedprops.overlay">
+    package="co.neoteric.android.certifiedprops.overlay">
 
     <application android:hasCode="false"/>
 

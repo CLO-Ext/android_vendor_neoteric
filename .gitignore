@@ -1,8 +1,8 @@
-# AOSPA app_overrides
+# Neoteric app_overrides
 apps/*
 
-# AOSPA Prebuilts
+# Neoteric Prebuilts
 prebuilt/
 
-# AOSPA translations
+# Neoteric translations
 translations/
