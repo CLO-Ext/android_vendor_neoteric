@@ -198,6 +198,10 @@ PRODUCT_PACKAGES += \
 # Qualcomm Common
 $(call inherit-product, device/qcom/common/common.mk)
 
+# Remove packages
+PRODUCT_PACKAGES += \
+    RemovePackages
+
 # Rescue Party
 # Disable RescueParty due to high risk of data loss
 PRODUCT_PRODUCT_PROPERTIES += \
