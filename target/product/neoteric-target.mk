@@ -54,7 +54,7 @@ $(call inherit-product, vendor/neoteric/bootanimation/bootanimation.mk)
 
 # Camera
 PRODUCT_PACKAGES += \
-    GoogleCameraGo
+    Aperture
 
 # curl
 PRODUCT_PACKAGES += \
