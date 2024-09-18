@@ -1,9 +1,9 @@
 function __print_neoteric_functions_help() {
 cat <<EOF
-Additional Paranoid Android functions:
+Additional Neoteric functions:
 - clodiff:         Utility to diff CLO history to Neoteric.
 - clomerge:        Utility to merge CLO tags.
-- repopick:        Utility to fetch changes from Gerrit.
+- roomservice:     Utility to sync device dependencies.
 - sort-blobs-list: Sort proprietary-files.txt sections with LC_ALL=C.
 EOF
 }
@@ -27,6 +27,27 @@ function clomerge()
     T=$(gettop)
     python3 $T/vendor/neoteric/build/tools/merge-clo.py $target_branch
 }
+
+function roomservice()
+{
+    if [ -z "$TARGET_PRODUCT" ]; then
+        echo -e "$red*******************************************************************************************************"
+        echo    " SEEMS LIKE LUNCH COMMAND HAS NOT BEEN EXECUTED YET, EXECUTE LUNCH TO PROPERLY SETUP BUILD ENVIRONMENT "
+        echo -e "*******************************************************************************************************$nocol"
+        return
+    fi
+    T=$(gettop)
+    TARGET_MANUFACTURER=$(get_build_var PRODUCT_MANUFACTURER 2>/dev/null)
+    if [ -f "device/$TARGET_MANUFACTURER/$TARGET_PRODUCT/neoteric.dependencies" ]; then
+        python3 $T/vendor/neoteric/build/tools/roomservice.py device/$TARGET_MANUFACTURER/$TARGET_PRODUCT
+    else
+    	echo -e "$red*******************************************************************************************"
+        echo    " MAKE SURE TO SETUP ROOMSERVICE CONFIGURATION IN DEVICE TREES BEFORE EXECUTING ROOMSERVICE "
+        echo -e "*******************************************************************************************$nocol"
+        return
+    fi
+}
+
 
 function sort-blobs-list() {
     T=$(gettop)
