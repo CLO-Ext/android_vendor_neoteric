@@ -84,6 +84,9 @@ function genkeys() {
     done
 }
 
+CLANG_VERSION=$(build/soong/scripts/get_clang_version.py)
+export LLVM_AOSP_PREBUILTS_VERSION="${CLANG_VERSION}"
+
 export SKIP_ABI_CHECKS="true"
 export RELAX_USES_LIBRARY_CHECK=true
 
