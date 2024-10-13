@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <string-array name="config_device_list" translatable="false">
+      <item>Pong</item>
+      <item>alioth</item>
+      <item>munch</item>
+   </string-array>
+
+   <string-array name="config_maintainer_name_list" translatable="false">
+      <item>HELLBOY017</item>
+      <item>Yoriscape</item>
+      <item>Yoriscape</item>
+   </string-array>
+
+   <string-array name="config_maintainer_link_list" translatable="false">
+      <item>https://t.me/HELLBOY017</item>
+      <item>https://t.me/yoriscape</item>
+      <item>https://t.me/yoriscape</item>
+   </string-array>
+
+   <string-array name="config_group_list" translatable="false">
+      <item>https://t.me/NeotericPong</item>
+      <item>https://t.me/yoriscape</item>
+      <item>https://t.me/yoriscape</item>
+   </string-array>
+</resources>
