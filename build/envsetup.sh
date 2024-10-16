@@ -80,6 +80,7 @@ fi
 export FILE_NAME_TAG=eng.nobody
 export BUILD_USERNAME=nobody
 export BUILD_HOSTNAME=android-build
+export RELAX_USES_LIBRARY_CHECK=true
 
 if [ -n "$TARGET_PRODUCT" ]; then
     roomservice
