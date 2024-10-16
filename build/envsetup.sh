@@ -40,9 +40,7 @@ function roomservice() {
     if [ -f "device/$TARGET_MANUFACTURER/$TARGET_PRODUCT/neoteric.dependencies" ]; then
         python3 $T/vendor/neoteric/build/tools/roomservice.py device/$TARGET_MANUFACTURER/$TARGET_PRODUCT
     else
-    	echo -e "$red*******************************************************************************************"
-        echo    " MAKE SURE TO SETUP ROOMSERVICE CONFIGURATION IN DEVICE TREES BEFORE EXECUTING ROOMSERVICE "
-        echo -e "*******************************************************************************************$nocol"
+        echo "Roomservice configuration not found in device tree, aborting roomservice."
         return
     fi
 }
