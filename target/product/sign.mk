@@ -1,3 +1,8 @@
+SIGNING_KEYS := certs/releasekey
+
+PRODUCT_DEFAULT_DEV_CERTIFICATE := $(SIGNING_KEYS)
+PRODUCT_OTA_PUBLIC_KEYS := $(PRODUCT_DEFAULT_DEV_CERTIFICATE)
+
 PRODUCT_CERTIFICATE_OVERRIDES := \
     com.android.adbd:com.android.adbd.certificate.override \
     com.android.adservices:com.android.adservices.certificate.override \

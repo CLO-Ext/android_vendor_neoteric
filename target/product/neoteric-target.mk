@@ -12,17 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-SIGNING_KEYS := certs/releasekey
-
-ifeq ($(wildcard certs/releasekey.*),)
-        $(error "Builds must be signed with release keys, place generated keys in certs/ directory or generate them with the build environment script")
+ifneq ($(wildcard certs/releasekey.*),)
+$(call inherit-product, vendor/neoteric/target/product/sign.mk) 
 endif
-
-# Sign
-$(call inherit-product, vendor/neoteric/target/product/sign.mk)
-
-PRODUCT_DEFAULT_DEV_CERTIFICATE := $(SIGNING_KEYS)
-PRODUCT_OTA_PUBLIC_KEYS := $(PRODUCT_DEFAULT_DEV_CERTIFICATE)
 
 # Enable support for APEX updates
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
