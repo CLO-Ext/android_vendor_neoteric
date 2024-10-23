@@ -12,6 +12,6 @@
       <item>PRODUCT:tokay_beta</item>
       <item>DEVICE:tokay</item>
       <item>FINGERPRINT:google/tokay_beta/tokay:15/AP41.240823.009/12329489:user/release-keys</item>
-      <item>VERSION.DEVICE_INITIAL_SDK_INT:25</item>
+      <item>VERSION.DEVICE_INITIAL_SDK_INT:21</item>
     </string-array>
 </resources>
