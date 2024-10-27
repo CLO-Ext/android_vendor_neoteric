@@ -23,9 +23,10 @@ function clodiff()
 function clomerge()
 {
     target_branch=$1
+    push=$2
     set_stuff_for_environment
     T=$(gettop)
-    python3 $T/vendor/neoteric/build/tools/merge-clo.py $target_branch
+    python3 $T/vendor/neoteric/build/tools/merge-clo.py $target_branch $push
 }
 
 function roomservice() {

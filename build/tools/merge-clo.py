@@ -143,8 +143,7 @@ def merge(repo_lst, branch):
         os.chdir("{0}/{1}".format(WORKING_DIR, repo))
         try:
             git.cmd.Git().pull("{}{}".format(BASE_URL, repo_lst[repo]), branch)
-            if check_actual_merged_repo(repo, branch):
-                successes.append(repo)
+            successes.append(repo)
         except GitCommandError as git_error:
             print(git_error)
             failures.append(repo)
@@ -153,42 +152,50 @@ def merge(repo_lst, branch):
 
 
 def merge_manifest(is_system, branch):
-    """ Updates CLO revision in .repo/manifests """
-    with open("{0}/.repo/manifests/default.xml".format(WORKING_DIR)) as manifestxml:
+    if is_system:
+        manifest_name = "system"
+    else:
+        manifest_name = "vendor"
+
+    manifest_path = "{0}/.repo/manifests/{1}.xml".format(WORKING_DIR, manifest_name)
+
+    # Delete the existing manifest if it exists
+    if os.path.exists(manifest_path):
+        os.remove(manifest_path)
+
+    # Construct the raw URL for the manifest file
+    raw_url = f"https://git.codelinaro.org/clo/la/la/{manifest_name}/manifest/-/raw/{branch}/{branch}.xml"
+    print(f"Downloading manifest from: {raw_url}")
+
+    # Download the manifest using curl
+    subprocess.run(
+        [
+            "curl",
+            "-o",
+            manifest_path,
+            raw_url
+        ],
+	check=True
+    )
+
+    # Ensure shallow cloning for each project in the manifest only for system
+    with open(manifest_path) as manifestxml:
         tree = Et.parse(manifestxml)
         root = tree.getroot()
-        root.findall("default")[0].set("revision", branch)
-        remote.set("revision", branch)
-        tree.write("{0}/.repo/manifests/default.xml".format(WORKING_DIR))
-        cpu_count = str(os.cpu_count())
-        subprocess.run(
-            [
-                "repo",
-                "sync",
-                "-c",
-                "--force-sync",
-                "-f",
-                "--no-tags",
-                "-j",
-                cpu_count,
-                "-q",
-                "-d",
-            ],
-            check=False,
-        )
-        git_repo = git.Repo("{0}/.repo/manifests".format(WORKING_DIR))
-        git_repo.git.execute(["git", "checkout", "."])
 
+        # Remove CLO remotes
+        for elem in root.findall("remote") + root.findall("default"):
+            root.remove(elem)
 
-def check_actual_merged_repo(repo, branch):
-    """Gets all the repos that were actually merged and
-    not the ones that were just up-to-date"""
-    git_repo = git.Repo("{0}/{1}".format(WORKING_DIR, repo))
-    commits = list(git_repo.iter_commits("HEAD", max_count=1))
-    result = commits[0].message
-    if branch.split("/")[2] in result:
-        return True
-    return False
+        # Shallow clone
+        if is_system:
+            for project in root.findall("project"):
+                project.set("clone-depth", "1")  # Set clone-depth for shallow clone if applicable
+
+        # Write the updated manifest back to file
+        tree.write(manifest_path)
+
+    print(f"{manifest_name}.xml downloaded successfully.{' Shallow clone settings applied.' if is_system else ''}")
 
 
 def print_results(branch):
@@ -204,12 +211,49 @@ def print_results(branch):
     print()
     if not REPOS_RESULTS["Failures"] and REPOS_RESULTS["Successes"]:
         print(
-            "{0} merged successfully! Compile and test before pushing to GitHub.".format(
+            "{0} merged successfully!".format(
                 branch.split("/")[2]
             )
         )
     elif not REPOS_RESULTS["Failures"] and not REPOS_RESULTS["Successes"]:
         print("Unable to retrieve any results")
+
+
+def push_successful_repos(successful_repos, is_system, branch):
+    revision = None
+    with open("{0}/.repo/manifests/default.xml".format(WORKING_DIR)) as default_manifest:
+        default_tree = Et.parse(default_manifest)
+        default_root = default_tree.getroot()
+        neoteric_remote = default_root.find("remote[@name='neoteric']")
+        if neoteric_remote is not None:
+            revision = neoteric_remote.get("revision")
+            print(f"Revision for neoteric remote: {revision}")
+
+    # Push manifest changes
+    if is_system:
+        manifest_name = "system"
+    else:
+        manifest_name = "vendor"
+    manifest_path = f"{WORKING_DIR}/.repo/manifests"
+    os.chdir(manifest_path)
+    try:
+        git.cmd.Git().add(f"{manifest_name}.xml")  # Stage all changes
+        git.cmd.Git().commit(m=f"{manifest_name}: Update to {branch}", s=True)  # Commit with the provided message
+        git.cmd.Git().push("origin", f"HEAD:{revision}", "--force")
+        print(f"Pushing {manifest_path} changes to Neoteric.")
+    except GitCommandError as git_error:
+        print(f"Failed to commit changes in {manifest_path}: {git_error}")
+
+    # Push repository changes
+    for repo in successful_repos:
+        repo_path = f"{WORKING_DIR}/{repo}"
+        print(f"Pushing {repo} to Neoteric...")
+        os.chdir(repo_path)
+        try:
+            git.cmd.Git().push("neoteric", f"HEAD:{revision}", "--force")
+            print(f"{repo} pushed successfully.")
+        except GitCommandError as git_error:
+            print(f"Failed to push {repo}: {git_error}")
 
 
 def main():
@@ -231,10 +275,10 @@ def main():
         help="path of repos to merge",
     )
     parser.add_argument(
-        "--merge-manifest",
-        dest="merge_manifest",
+        "--push",
+        dest="push",
         action="store_true",
-        help="automatically update manifest before merging repos",
+        help="Push each repository to github",
     )
     parser.add_argument(
         "--dry-run",
@@ -256,12 +300,14 @@ def main():
             print(list(REPOS_TO_MERGE.keys()))
             quit()
         if REPOS_TO_MERGE:
-            if args.merge_manifest:
-                merge_manifest(is_system, branch)
+            merge_manifest(is_system, args.branch_to_merge)
             force_sync(REPOS_TO_MERGE)
             merge(REPOS_TO_MERGE, branch)
             os.chdir(WORKING_DIR)
             print_results(branch)
+            if args.push:
+                if not REPOS_RESULTS["Failures"] and REPOS_RESULTS["Successes"]:
+                    push_successful_repos(REPOS_RESULTS["Successes"], is_system, args.branch_to_merge)
         else:
             print("No repos to sync")
     else:
