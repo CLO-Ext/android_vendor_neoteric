@@ -73,6 +73,10 @@ PRODUCT_PACKAGES += \
     fsck.exfat \
     mkfs.exfat
 
+# Game frame rate
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    debug.graphics.game_default_frame_rate.disabled=true
+
 # Google - GMS, Pixel, and Mainline Modules
 $(call inherit-product, vendor/google/gms/config.mk)
 $(call inherit-product, vendor/google/pixel/config.mk)
