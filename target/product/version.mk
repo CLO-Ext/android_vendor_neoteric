@@ -1,5 +1,5 @@
 NEOTERIC_VERSION := 3.0
-NEOTERIC_BUILD_DATE := $(shell date +%s)
+NEOTERIC_BUILD_DATE := $(shell date -u +%s)
 
 PRODUCT_SYSTEM_PROPERTIES += \
     ro.neoteric.version=$(NEOTERIC_VERSION) \

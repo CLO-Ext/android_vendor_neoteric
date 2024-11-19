@@ -10,7 +10,7 @@ then
     DEVICE=${OUT##*/}
 
     DATE=$(grep ro\.neoteric\.date\.utc ./out/target/product/$DEVICE/system/build.prop | cut -d= -f2);
-    DATE_S=`date "+%Y_%m_%d" -d @$DATE`
+    DATE_S=`date -u "+%Y_%m_%d" -d @$DATE`
 
     JSON_DEVICE_DIR=ota/$DEVICE
     JSON=$JSON_DEVICE_DIR/ota.json

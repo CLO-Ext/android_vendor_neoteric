@@ -1,4 +1,4 @@
-NEOTERIC_BUILD_DATE := $(shell date -u +%Y%m%d)
+NEOTERIC_BUILD_DATE := $(shell date -u +%Y%m%d_%H%M%S)
 
 NEOTERIC_TARGET := Neoteric-OS_$(TARGET_DEVICE)-$(NEOTERIC_VERSION)-$(NEOTERIC_BUILD_DATE)
 
