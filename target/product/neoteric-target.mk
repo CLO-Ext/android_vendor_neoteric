@@ -253,7 +253,7 @@ PRODUCT_PACKAGES += \
 
 # Wallpapers
 PRODUCT_PACKAGES += \
-    ProtonWallpaperStub
+    NeotericWallpaperStub
 
 # WiFi
 PRODUCT_PACKAGES += \
