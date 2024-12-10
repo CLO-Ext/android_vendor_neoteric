@@ -144,6 +144,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
     ro.face.sense_service=$(TARGET_SUPPORTS_64_BIT_APPS)
 
+# Package cache
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    pm.boot.disable_package_cache=true
+
 # Permissions
 PRODUCT_COPY_FILES += \
     vendor/neoteric/target/config/permissions/default_permissions_com.google.android.deskclock.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/default-permissions/default_permissions_com.google.android.deskclock.xml \
