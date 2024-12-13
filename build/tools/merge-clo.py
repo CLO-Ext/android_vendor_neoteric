@@ -139,6 +139,9 @@ def merge(repo_lst, branch):
     failures = []
     successes = []
     for repo in repo_lst:
+        if repo == "device/qcom/common":
+            print(f"Skipping merge for {repo} as per exception rule.")
+            continue  # Skip this repository
         print("Merging " + repo)
         os.chdir("{0}/{1}".format(WORKING_DIR, repo))
         try:
@@ -149,7 +152,6 @@ def merge(repo_lst, branch):
             failures.append(repo)
 
     REPOS_RESULTS.update({"Successes": successes, "Failures": failures})
-
 
 def merge_manifest(is_system, branch):
     if is_system:
