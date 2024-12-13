@@ -189,6 +189,10 @@ def merge_manifest(is_system, branch):
         for elem in root.findall("remote") + root.findall("default"):
             root.remove(elem)
 
+	# Remove refs
+        for refs in root.findall("refs"):
+            root.remove(refs)
+	    
         # Shallow clone
         if is_system:
             for project in root.findall("project"):
