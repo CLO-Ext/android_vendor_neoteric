@@ -32,6 +32,9 @@ PRODUCT_COPY_FILES += \
     vendor/neoteric/target/config/apns-conf.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/apns-conf.xml
 endif
 
+# Inherit art options
+include vendor/neoteric/target/product/art.mk
+
 # Boot Animation
 $(call inherit-product, vendor/neoteric/bootanimation/bootanimation.mk)
 
@@ -50,9 +53,6 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
 # Dexpreopt
 # Don't dexpreopt prebuilts. (For GMS).
 DONT_DEXPREOPT_PREBUILTS := true
-
-PRODUCT_DEXPREOPT_SPEED_APPS += \
-    SystemUI
 
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.systemuicompilerfilter=speed
