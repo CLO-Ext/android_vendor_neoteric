@@ -4,23 +4,27 @@
       <item>Pong</item>
       <item>alioth</item>
       <item>munch</item>
+      <item>apollo</item>
    </string-array>
 
    <string-array name="config_maintainer_name_list" translatable="false">
       <item>HELLBOY017</item>
       <item>Yoriscape</item>
       <item>Yoriscape</item>
+      <item>QKIvan</item>
    </string-array>
 
    <string-array name="config_maintainer_link_list" translatable="false">
       <item>https://t.me/HELLBOY017</item>
       <item>https://t.me/yoriscape</item>
       <item>https://t.me/yoriscape</item>
+      <item>https://t.me/layout233</item>
    </string-array>
 
    <string-array name="config_group_list" translatable="false">
       <item>https://t.me/NeotericPong</item>
       <item>https://t.me/yoriscape</item>
       <item>https://t.me/yoriscape</item>
+      <item>https://t.me/loop233_layout</item>
    </string-array>
 </resources>
