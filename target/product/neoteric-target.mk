@@ -19,6 +19,10 @@ endif
 # Enable support for APEX updates
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
+# b/344511668
+PRODUCT_PACKAGES += \
+    android.software.credentials.prebuilt.xml
+
 # Enable allowlist for some aosp packages that should not be scanned in a "stopped" state
 # Some CTS test case failed after enabling feature config_stopSystemPackagesByDefault
 PRODUCT_PACKAGES += initial-package-stopped-states-aosp.xml
