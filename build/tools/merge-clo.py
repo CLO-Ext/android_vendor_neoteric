@@ -44,7 +44,6 @@ MANIFEST_NAME = "neoteric.xml"
 REPOS_TO_MERGE = {}
 REPOS_RESULTS = {}
 
-
 # useful helpers
 def nice_error():
     """ Errors out in a non-ugly way. """
@@ -153,6 +152,7 @@ def merge(repo_lst, branch):
 
     REPOS_RESULTS.update({"Successes": successes, "Failures": failures})
 
+
 def merge_manifest(is_system, branch):
     if is_system:
         manifest_name = "system"
@@ -205,7 +205,7 @@ def merge_manifest(is_system, branch):
 
 
 def print_results(branch):
-    """ Prints all all repos that will need to be manually fixed """
+    """ Prints all repos that will need to be manually fixed """
     if REPOS_RESULTS["Failures"]:
         print("\nThese repos failed to merge, fix manually: ")
         for failure in REPOS_RESULTS["Failures"]:
@@ -312,7 +312,7 @@ def main():
             os.chdir(WORKING_DIR)
             print_results(branch)
             if args.push:
-                if not REPOS_RESULTS["Failures"] and REPOS_RESULTS["Successes"]:
+                if REPOS_RESULTS["Successes"]:  # Push only successful repos
                     push_successful_repos(REPOS_RESULTS["Successes"], is_system, args.branch_to_merge)
         else:
             print("No repos to sync")
@@ -321,6 +321,9 @@ def main():
         merge(repo_lst, branch)
         os.chdir(WORKING_DIR)
         print_results(branch)
+        if args.push:
+            if REPOS_RESULTS["Successes"]:  # Push only successful repos
+                push_successful_repos(REPOS_RESULTS["Successes"], is_system, args.branch_to_merge)
 
 
 if __name__ == "__main__":
