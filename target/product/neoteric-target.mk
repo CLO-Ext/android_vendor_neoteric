@@ -91,6 +91,9 @@ ifneq ($(TARGET_EXCLUDE_GMODULES), true)
 $(call inherit-product-if-exists, vendor/google/modules/build/mainline_modules.mk)
 endif
 
+# GMS Spoof
+$(call inherit-product, vendor/gms_spoof/config.mk)
+
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
      vendor/neoteric/target/config/neoteric_vendor_framework_compatibility_matrix.xml
