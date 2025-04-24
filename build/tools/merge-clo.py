@@ -132,19 +132,46 @@ def force_sync(repo_lst):
         check=False,
     )
 
-
-def merge(repo_lst, branch):
+def merge(repo_lst, is_system, branch):
     """ Merges the necessary repos and lists if a repo succeeds or fails """
     failures = []
     successes = []
+
     for repo in repo_lst:
         if repo == "device/qcom/common":
             print(f"Skipping merge for {repo} as per exception rule.")
             continue  # Skip this repository
+
         print("Merging " + repo)
         os.chdir("{0}/{1}".format(WORKING_DIR, repo))
+
         try:
-            git.cmd.Git().pull("{}{}".format(BASE_URL, repo_lst[repo]), branch)
+            # Parse the XML file to get the revision
+            manifest_file = "{0}/.repo/manifests/system.xml".format(WORKING_DIR) if is_system else "{0}/.repo/manifests/vendor.xml".format(WORKING_DIR)
+            with open(manifest_file) as manifest:
+                root = Et.parse(manifest).getroot()
+                revision = None
+
+                # Find the revision for the current repo
+                for child in root.findall("project"):
+                    if child.get("path") == repo:
+                        revision = child.get("revision")
+                        break
+
+            if not revision:
+                print(f"Failed to find revision for {repo} in {manifest_file}")
+                failures.append(repo)
+                continue
+
+            # Fetch the branch associated with the revision
+            remote_url = "{}{}".format(BASE_URL, repo_lst[repo])
+            git.cmd.Git().fetch(remote_url, revision)
+
+            # Merge the fetched revision into the current branch with a custom message
+            branch_name = branch.replace("refs/tags/", "")
+            merge_msg = f"Merge tag '{branch_name}' of {remote_url} into HEAD\n{branch_name}"
+            git.cmd.Git().merge(revision, m=merge_msg)
+
             successes.append(repo)
         except GitCommandError as git_error:
             print(git_error)
@@ -308,7 +335,7 @@ def main():
         if REPOS_TO_MERGE:
             merge_manifest(is_system, args.branch_to_merge)
             force_sync(REPOS_TO_MERGE)
-            merge(REPOS_TO_MERGE, branch)
+            merge(REPOS_TO_MERGE, is_system, branch)
             os.chdir(WORKING_DIR)
             print_results(branch)
             if args.push:
