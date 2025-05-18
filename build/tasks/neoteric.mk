@@ -5,7 +5,7 @@ NEOTERIC_TARGET := Neoteric-OS_$(TARGET_DEVICE)-$(NEOTERIC_VERSION)-$(NEOTERIC_B
 NEOTERIC_OTA_PACKAGE := $(PRODUCT_OUT)/$(NEOTERIC_TARGET).zip
 
 $(NEOTERIC_OTA_PACKAGE): $(BUILT_TARGET_FILES_PACKAGE) $(OTA_FROM_TARGET_FILES)
-	$(call build-ota-package-target,$@,-k $(SIGNING_KEYS) --output_metadata_path $(INTERNAL_OTA_METADATA))
+	$(call build-ota-package-target,$@, --output_metadata_path $(INTERNAL_OTA_METADATA))
 
 .PHONY: bacon
 bacon: $(NEOTERIC_OTA_PACKAGE)

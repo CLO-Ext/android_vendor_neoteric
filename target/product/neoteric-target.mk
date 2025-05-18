@@ -12,9 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ifneq ($(wildcard certs/releasekey.*),)
-$(call inherit-product, vendor/neoteric/target/product/sign.mk) 
-endif
+#ifneq ($(wildcard certs/releasekey.*),)
+#$(call inherit-product, vendor/neoteric/target/product/sign.mk) 
+#endif
 
 # Enable support for APEX updates
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
