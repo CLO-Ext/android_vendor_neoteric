@@ -1,23 +1,23 @@
 NEOTERIC_BUILD_DATE := $(shell date -u +%Y%m%d_%H%M%S)
 
 NEOTERIC_TARGET := Neoteric-OS_$(TARGET_DEVICE)-$(NEOTERIC_VERSION)-$(NEOTERIC_BUILD_DATE)
-
 NEOTERIC_OTA_PACKAGE := $(PRODUCT_OUT)/$(NEOTERIC_TARGET).zip
+NEOTERIC_FASTBOOT_PACKAGE := $(PRODUCT_OUT)/$(NEOTERIC_TARGET)-fastboot.zip
 
 $(NEOTERIC_OTA_PACKAGE): $(BUILT_TARGET_FILES_PACKAGE) $(OTA_FROM_TARGET_FILES)
 	$(call build-ota-package-target,$@, --output_metadata_path $(INTERNAL_OTA_METADATA))
-
-.PHONY: bacon
-bacon: $(NEOTERIC_OTA_PACKAGE)
 	$(hide) ./vendor/neoteric/tools/generate_json_build_info.sh $(NEOTERIC_OTA_PACKAGE)
-	@echo "Package Complete: $(NEOTERIC_OTA_PACKAGE)" >&2
-
-NEOTERIC_FASTBOOT_PACKAGE := $(PRODUCT_OUT)/$(NEOTERIC_TARGET)-fastboot.zip
 
 $(NEOTERIC_FASTBOOT_PACKAGE): $(BUILT_TARGET_FILES_PACKAGE) $(IMG_FROM_TARGET_FILES)
 	$(IMG_FROM_TARGET_FILES) \
-	$(BUILT_TARGET_FILES_PACKAGE) $@
+		--additional IMAGES/VerifiedBootParams.textproto:VerifiedBootParams.textproto \
+	    	$(BUILT_TARGET_FILES_PACKAGE) $@
 
-.PHONY: fastboot
+.PHONY: bacon fastboot
+
+bacon: $(NEOTERIC_OTA_PACKAGE)
+	@echo "Package Complete: $(NEOTERIC_OTA_PACKAGE)"
+
 fastboot: $(NEOTERIC_FASTBOOT_PACKAGE)
-	@echo "Package Complete: $(NEOTERIC_FASTBOOT_PACKAGE)" >&2 
+	@echo "Package Complete: $(NEOTERIC_FASTBOOT_PACKAGE)"
+
