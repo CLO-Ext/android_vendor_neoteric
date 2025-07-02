@@ -37,7 +37,7 @@ function roomservice() {
         return
     fi
     T=$(gettop)
-    TARGET_MANUFACTURER=$(get_build_var PRODUCT_MANUFACTURER 2>/dev/null)
+    TARGET_MANUFACTURER=$(get_build_var PRODUCT_MANUFACTURER 2>/dev/null | tr '[:upper:]' '[:lower:]')
     if [ -f "device/$TARGET_MANUFACTURER/$TARGET_PRODUCT/neoteric.dependencies" ]; then
         python3 $T/vendor/neoteric/build/tools/roomservice.py device/$TARGET_MANUFACTURER/$TARGET_PRODUCT
     else
