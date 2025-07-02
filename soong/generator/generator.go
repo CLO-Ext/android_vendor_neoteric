@@ -20,7 +20,6 @@ import (
 	"strings"
 
 	"github.com/google/blueprint"
-	"github.com/google/blueprint/bootstrap"
 	"github.com/google/blueprint/proptools"
 
 	"android/soong/android"
@@ -145,7 +144,8 @@ func (g *Module) GenerateAndroidBuildActions(ctx android.ModuleContext) {
 	tools := map[string]android.Path{}
 
 	if len(g.properties.Tools) > 0 {
-		ctx.VisitDirectDepsBlueprint(func(module blueprint.Module) {
+                ctx.VisitDirectDepsProxyAllowDisabled(func(proxy android.ModuleProxy) {
+			module := android.PrebuiltGetPreferred(ctx, proxy)
 			switch ctx.OtherModuleDependencyTag(module) {
 			case hostToolDepTag:
 				tool := ctx.OtherModuleName(module)
@@ -158,14 +158,6 @@ func (g *Module) GenerateAndroidBuildActions(ctx android.ModuleContext) {
 						} else {
 							ctx.ModuleErrorf("depends on disabled module %q", tool)
 						}
-						break
-					}
-					path = t.HostToolPath()
-				} else if t, ok := module.(bootstrap.GoBinaryTool); ok {
-					if s, err := filepath.Rel(android.PathForOutput(ctx).String(), t.InstallPath()); err == nil {
-						path = android.OptionalPathForPath(android.PathForOutput(ctx, s))
-					} else {
-						ctx.ModuleErrorf("cannot find path for %q: %v", tool, err)
 						break
 					}
 				} else {
