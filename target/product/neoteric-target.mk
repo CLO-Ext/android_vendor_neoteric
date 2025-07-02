@@ -84,12 +84,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
     debug.graphics.game_default_frame_rate.disabled=true
 
-# Google - GMS, Pixel, and Mainline Modules
-$(call inherit-product, vendor/google/gms/config.mk)
-$(call inherit-product, vendor/google/pixel/config.mk)
-ifneq ($(TARGET_EXCLUDE_GMODULES), true)
-$(call inherit-product-if-exists, vendor/google/modules/build/mainline_modules.mk)
-endif
+# Google - GMS
+$(call inherit-product, vendor/gms/products/gms.mk)
 
 # GMS Spoof
 $(call inherit-product, vendor/gms_spoof/config.mk)
