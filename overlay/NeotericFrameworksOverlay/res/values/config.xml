@@ -467,4 +467,7 @@
             2 - Global actions menu
     -->
     <integer name="config_keyChordPowerVolumeUp">1</integer>
+    
+    <string name="android_start_title">Android is starting...</string>
+    <string name="android_upgrading_title">Android is upgrading...</string>
 </resources>
