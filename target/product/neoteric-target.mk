@@ -87,6 +87,9 @@ PRODUCT_SYSTEM_EXT_PROPERTIES += \
 # Google - GMS
 $(call inherit-product, vendor/gms/products/gms.mk)
 
+# Pixel goodies
+$(call inherit-product, vendor/neoteric_prebuilt/pixel/packages.mk)
+
 # GMS Spoof
 $(call inherit-product, vendor/gms_spoof/config.mk)
 
