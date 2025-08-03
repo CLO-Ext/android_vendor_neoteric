@@ -21,8 +21,12 @@ PRODUCT_PACKAGES += \
     NeotericSettingsOverlay \
     NeotericSettingsProviderOverlay \
     NeotericSystemUIOverlay \
-    NeotericLauncherOverlay \
+    NeotericLauncherOverlay
+
+ifneq ($(IS_OFFICIAL), false)
+PRODUCT_PACKAGES += \
     NeotericUpdatesOverlay
+endif
 
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/neoteric/overlay/static
 PRODUCT_PACKAGE_OVERLAYS += vendor/neoteric/overlay/static
