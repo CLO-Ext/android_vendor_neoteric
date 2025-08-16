@@ -30,7 +30,7 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 
 # Dexopt boot types
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    pm.dexopt.first-boot=quicken \
+    pm.dexopt.first-boot?=quicken \
     pm.dexopt.boot=verify
 
 # Dexopt filters
@@ -39,7 +39,7 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     pm.dexopt.bg-dexopt=speed-profile \
     pm.dexopt.ab-ota=speed-profile \
     pm.dexopt.inactive=verify \
-    pm.dexopt.shared=speed
+    pm.dexopt.shared?=speed
 
 # dex2oat threads (default)
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
