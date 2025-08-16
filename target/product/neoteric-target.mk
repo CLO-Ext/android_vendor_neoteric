@@ -39,6 +39,15 @@ endif
 # Inherit art options
 include vendor/neoteric/target/product/art.mk
 
+# Blur
+PRODUCT_SYSTEM_EXT_PROPERTIES += \
+    ro.custom.blur.enable=true \
+    ro.sf.blurs_are_expensive=1 \
+    ro.surface_flinger.supports_background_blur=1
+
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.launcher.blur.appLaunch=0
+
 # Boot Animation
 $(call inherit-product, vendor/neoteric/bootanimation/bootanimation.mk)
 
